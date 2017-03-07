@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Enywas Forum</title>
+    <title>Clean Blog - Sample Post</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -72,34 +72,38 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Enywas Forum</h1>
-                        <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                    <div class="post-heading">
+                        <h1>Man must explore, and this is exploration at its greatest</h1>
+                        <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+                        <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-4 col-md-12 col-md-offset-1">
+                        <form method="post">
+                        <input type="text" name="username" placeholder="Username" value=""><br><br>
+                        <input type="password" name="password" placeholder="Password"><br><br>
+                        <input type="submit" name="submit" value="Log in!">
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </article>
 
     <hr>
-    <!-- Pager -->
-    <ul class="pager">
-        <li>
-            <a href="registration.php" style="padding: 40px;">NEw to the site? <br> Register</a>
-        </li>
-        &nbsp; 	&nbsp;
-        <li>
-            <a href="login.php" style="padding: 59px 70px 40px 70px;">Log in</a>
-        </li>
-    </ul>
-    <hr>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -107,7 +111,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="http://twitter.com">
+                            <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -115,7 +119,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="http://facebook.com">
+                            <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -123,7 +127,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/SimSimnv/PHP-Fundamentals-Teamwork">
+                            <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -131,7 +135,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Enywas Forum 2017</p>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
                 </div>
             </div>
         </div>
@@ -149,6 +153,55 @@
 
     <!-- Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
+
+    <?php
+    if(isset($_POST['submit'])) {
+
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "enywas";
+        $user = $_POST['username'];
+        $pass = md5(trim($_POST['password']));
+
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password,$dbname);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        //echo "Connected successfully";
+
+        $sql = "SELECT username, password FROM new_user
+                  WHERE  username = '$user' AND password = '$pass'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            $row = $result->fetch_assoc();
+            $_SESSION['islogged'] = true;
+            $_SESSION['username'] = $row["username"];
+            //var_dump($_SESSION);
+            ?>
+            <script>
+                window.location="index.html";
+            </script>
+            <?php
+
+            echo "</table>";
+        } else {
+            ?>
+            <script>
+                window.alert("Wrong username/password!");
+            </script>
+    <?php
+        }
+
+
+        }
+    ?>
 
 </body>
 
