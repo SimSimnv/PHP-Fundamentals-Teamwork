@@ -14,7 +14,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Sample Post</title>
+    <title>Clean Blog - About</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@ session_start();
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-            </div>
+              </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -59,7 +59,18 @@ session_start();
                         <a href="about.php">About</a>
                     </li>
                     <li>
-                        <a href="login.php">Log in</a>
+                        <?php
+                        if(isset($_SESSION['username'])){
+                            ?>
+                            <a href="logout.php">Log out</a>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <a href="login.php">Log in</a>
+                            <?php
+                        }
+                        ?>
                     </li>
                     <li>
                         <a href="forum.php">Forum</a>
@@ -85,34 +96,30 @@ session_start();
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>Welcome to Enywas Forum</h1>
-                        <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                    <div class="page-heading">
+                        <h1>Enywas Team</h1>
+                        <hr class="small">
+                        <span class="subheading">A SoftUni Project</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Post Content -->
-    <article>
-        <div class="container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-4 col-md-12 col-md-offset-1">
-                        <form method="post">
-                        <input type="text" name="username" placeholder="Username" value=""><br><br>
-                        <input type="password" name="password" placeholder="Password"><br><br>
-                        <input type="submit" name="submit" value="Log in!">
-                        </form>
-                    </div>
-                </div>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestiae debitis nobis, quod sapiente qui voluptatum, placeat magni repudiandae accusantium fugit quas labore non rerum possimus, corrupti enim modi! Et.</p>
             </div>
-    </article>
+        </div>
+    </div>
 
     <hr>
 
@@ -123,7 +130,7 @@ session_start();
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="#">
+                            <a href="http://twitter.com">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -131,7 +138,7 @@ session_start();
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="http://facebook.com">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -139,7 +146,7 @@ session_start();
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://github.com/SimSimnv/PHP-Fundamentals-Teamwork">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -165,57 +172,6 @@ session_start();
 
     <!-- Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
-
-    <?php
-    if(isset($_POST['submit'])) {
-
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "enywas";
-        $user = $_POST['username'];
-        $pass = md5(trim($_POST['password']));
-
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password,$dbname);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        //echo "Connected successfully";
-
-        $sql = "SELECT username, password FROM new_user
-                  WHERE  username = '$user' AND password = '$pass'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            $row = $result->fetch_assoc();
-            $_SESSION['islogged'] = true;
-            $_SESSION['username'] = $row["username"];
-            //var_dump($_SESSION);
-            ?>
-
-            <script>
-                window.location="index.php";
-            </script>
-            <?php
-
-            echo "</table>";
-        } else {
-
-            ?>
-            <script>
-                window.alert("Wrong username/password!");
-            </script>
-    <?php
-        }
-
-
-        }
-    ?>
 
 </body>
 

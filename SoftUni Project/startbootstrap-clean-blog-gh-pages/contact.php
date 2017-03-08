@@ -14,7 +14,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Sample Post</title>
+    <title>Clean Blog - Contact</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,7 +59,18 @@ session_start();
                         <a href="about.php">About</a>
                     </li>
                     <li>
-                        <a href="login.php">Log in</a>
+                        <?php
+                        if(isset($_SESSION['username'])){
+                            ?>
+                            <a href="logout.php">Log out</a>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <a href="login.php">Log in</a>
+                            <?php
+                        }
+                        ?>
                     </li>
                     <li>
                         <a href="forum.php">Forum</a>
@@ -85,34 +96,68 @@ session_start();
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/contact-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>Welcome to Enywas Forum</h1>
-                        <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                    <div class="page-heading">
+                        <h1>Contact Me</h1>
+                        <hr class="small">
+                        <span class="subheading">Have questions? I have answers (maybe).</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Post Content -->
-    <article>
-        <div class="container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-4 col-md-12 col-md-offset-1">
-                        <form method="post">
-                        <input type="text" name="username" placeholder="Username" value=""><br><br>
-                        <input type="password" name="password" placeholder="Password"><br><br>
-                        <input type="submit" name="submit" value="Log in!">
-                        </form>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
+                <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+                <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+                <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block text-danger"></p>
+                        </div>
                     </div>
-                </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Message</label>
+                            <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" class="btn btn-default">Send</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-    </article>
+        </div>
+    </div>
 
     <hr>
 
@@ -123,7 +168,7 @@ session_start();
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="#">
+                            <a href="http://twitter.com">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -131,7 +176,7 @@ session_start();
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="http://facebook.com">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -139,7 +184,7 @@ session_start();
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://github.com/SimSimnv/PHP-Fundamentals-Teamwork">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -165,57 +210,6 @@ session_start();
 
     <!-- Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
-
-    <?php
-    if(isset($_POST['submit'])) {
-
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "enywas";
-        $user = $_POST['username'];
-        $pass = md5(trim($_POST['password']));
-
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password,$dbname);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        //echo "Connected successfully";
-
-        $sql = "SELECT username, password FROM new_user
-                  WHERE  username = '$user' AND password = '$pass'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            $row = $result->fetch_assoc();
-            $_SESSION['islogged'] = true;
-            $_SESSION['username'] = $row["username"];
-            //var_dump($_SESSION);
-            ?>
-
-            <script>
-                window.location="index.php";
-            </script>
-            <?php
-
-            echo "</table>";
-        } else {
-
-            ?>
-            <script>
-                window.alert("Wrong username/password!");
-            </script>
-    <?php
-        }
-
-
-        }
-    ?>
 
 </body>
 

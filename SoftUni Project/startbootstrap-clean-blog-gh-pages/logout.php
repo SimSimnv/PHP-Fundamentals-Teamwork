@@ -14,7 +14,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Enywas Forum</title>
+    <title>Clean Blog - Sample Post</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,16 +62,7 @@ session_start();
                     <a href="login.php">Log in</a>
                 </li>
                 <li>
-                    <a href="forum.php">Forum</a>
-                </li>
-                <li>
-                    <?php
-                    if(!isset($_SESSION['username'])){
-                        ?>
-                        <a href="registration.php">Register</a>
-                        <?php
-                    }
-                    ?>
+                    <a href="registration.php">Register</a>
                 </li>
                 <li>
                     <a href="contact.php">Contact</a>
@@ -85,68 +76,41 @@ session_start();
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+<header class="intro-header" style="background-image: url('img/post-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
+                <div class="post-heading">
                     <h1>Welcome to Enywas Forum</h1>
-                    <hr class="small">
-                    <span class="subheading">Sign Up</span>
+                    <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="container">
+            <div class="row">
 
-    <hr>
-    <!-- Registration form -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <p>Registration form</p>
-            <form method="post">
-                <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Name</label>
-                        <input type="text" name="username"class="form-control" placeholder="Username" id="name" required data-validation-required-message="Please enter your name.">
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-                <div class="row control-group">
-                     <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Email Address</label>
-                        <input type="email" name= "email"class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-                <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Password" id="password" required data-validation-required-message="Please enter your phone number.">
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-                <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Age</label>
-                        <input type="number" name="age" min="18" class="form-control" placeholder="age" id="age" required data-validation-required-message="Please enter your phone number.">
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-                <br>
-                <div id="success"></div>
-                <div class="row">
-                    <div class="form-group col-xs-12">
-                        <button type="submit" name= "submit"class="btn btn-default">Regsiter</button>
-                    </div>
-                </div>
-            </form>
+                <?php
+                    Echo "Bye " . $_SESSION['username'];
+
+
+                    // remove all session variables
+                    session_unset();
+
+                    // destroy the session
+                    session_destroy();
+                    ?>
+
+            </div>
         </div>
-    </div>
-</div>
+</article>
+
+<hr>
 
 <!-- Footer -->
 <footer>
@@ -155,7 +119,7 @@ session_start();
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     <li>
-                        <a href="http://twitter.com">
+                        <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -163,7 +127,7 @@ session_start();
                         </a>
                     </li>
                     <li>
-                        <a href="http://facebook.com">
+                        <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -171,7 +135,7 @@ session_start();
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/SimSimnv/PHP-Fundamentals-Teamwork">
+                        <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -197,6 +161,7 @@ session_start();
 
 <!-- Theme JavaScript -->
 <script src="js/clean-blog.min.js"></script>
+
 <?php
 if(isset($_POST['submit'])) {
 
@@ -206,8 +171,7 @@ if(isset($_POST['submit'])) {
     $dbname = "enywas";
     $user = $_POST['username'];
     $pass = md5(trim($_POST['password']));
-    $email = $_POST['email'];
-    $age = $_POST['age'];
+
 
     // Create connection
     $conn = new mysqli($servername, $username, $password,$dbname);
@@ -218,26 +182,37 @@ if(isset($_POST['submit'])) {
     }
     //echo "Connected successfully";
 
-    $sql = "INSERT INTO new_user (username,email, password,age) VALUES ('$user' , '$email',
-        '$pass','$age')";
+    $sql = "SELECT username, password FROM new_user
+                  WHERE  username = '$user' AND password = '$pass'";
+    $result = $conn->query($sql);
 
-    if($conn->query($sql) === True){
-        //echo '<p>' ."User registrated!" . '</p>';
+    if ($result->num_rows > 0) {
+        // output data of each row
+        $row = $result->fetch_assoc();
+        $_SESSION['islogged'] = true;
+        $_SESSION['username'] = $row["username"];
+        //var_dump($_SESSION);
         ?>
-    <script>
-        window.alert("User created!");
-    </script>
-    <?php
-    }
-    else{
-        ?>
+
         <script>
-            window.alert("User already exists!");
+            window.location="index.php";
+        </script>
+    <?php
+
+    echo "</table>";
+    } else {
+
+    ?>
+        <script>
+            window.alert("Wrong username/password!");
         </script>
         <?php
-    }}
-?>
-</body>
+    }
 
+
+}
+?>
+
+</body>
 
 </html>

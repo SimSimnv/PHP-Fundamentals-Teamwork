@@ -14,7 +14,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog - Sample Post</title>
+    <title>Enywas Forum</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,7 +59,18 @@ session_start();
                         <a href="about.php">About</a>
                     </li>
                     <li>
-                        <a href="login.php">Log in</a>
+                        <?php
+                            if(isset($_SESSION['username'])){
+                                ?>
+                                <a href="logout.php">Log out</a>
+                        <?php
+                            }
+                            else{
+                                ?>
+                                <a href="login.php">Log in</a>
+                        <?php
+                            }
+                        ?>
                     </li>
                     <li>
                         <a href="forum.php">Forum</a>
@@ -85,37 +96,43 @@ session_start();
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>Welcome to Enywas Forum</h1>
-                        <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+                    <div class="site-heading">
+                        <h1>Enywas Forum</h1>
+                        <hr class="small">
+                        <span class="subheading">A SoftUni Team Project</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Post Content -->
-    <article>
-        <div class="container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-4 col-md-12 col-md-offset-1">
-                        <form method="post">
-                        <input type="text" name="username" placeholder="Username" value=""><br><br>
-                        <input type="password" name="password" placeholder="Password"><br><br>
-                        <input type="submit" name="submit" value="Log in!">
-                        </form>
-                    </div>
-                </div>
-            </div>
-    </article>
+    <!-- Main Content -->
 
     <hr>
-
+    <?php
+        if(isset($_SESSION['username'])){
+            echo "Welcome " . $_SESSION['username'];
+        }
+        else{
+            ?>
+            <!-- Pager -->
+            <ul class="pager">
+                <li>
+                    <a href="registration.php" style="padding: 40px;">NEw to the site? <br> Register</a>
+                </li>
+                &nbsp; 	&nbsp;
+                <li>
+                    <a href="login.php" style="padding: 59px 70px 40px 70px;">Log in</a>
+                </li>
+            </ul>
+    <?php
+        }
+    ?>
+    <hr>
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -123,7 +140,7 @@ session_start();
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="#">
+                            <a href="http://twitter.com">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -131,7 +148,7 @@ session_start();
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="http://facebook.com">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -139,7 +156,7 @@ session_start();
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://github.com/SimSimnv/PHP-Fundamentals-Teamwork">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -167,54 +184,12 @@ session_start();
     <script src="js/clean-blog.min.js"></script>
 
     <?php
-    if(isset($_POST['submit'])) {
-
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "enywas";
-        $user = $_POST['username'];
-        $pass = md5(trim($_POST['password']));
-
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password,$dbname);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        //echo "Connected successfully";
-
-        $sql = "SELECT username, password FROM new_user
-                  WHERE  username = '$user' AND password = '$pass'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            $row = $result->fetch_assoc();
-            $_SESSION['islogged'] = true;
-            $_SESSION['username'] = $row["username"];
-            //var_dump($_SESSION);
-            ?>
-
-            <script>
-                window.location="index.php";
-            </script>
-            <?php
-
-            echo "</table>";
-        } else {
-
-            ?>
-            <script>
-                window.alert("Wrong username/password!");
-            </script>
-    <?php
-        }
-
-
-        }
+    if(isset($_SESSION['username'])){
+        //echo "Welcome " . $_SESSION['username'];
+    }
+    else{
+        echo "No user logged";
+    }
     ?>
 
 </body>
