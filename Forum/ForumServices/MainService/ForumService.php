@@ -78,4 +78,7 @@ class ForumService implements ForumServiceInterface
         //Adding userId and username to session
         $this->sessionService->setUser($user->getId(),$user->getUsername());
     }
+
+
+
 }

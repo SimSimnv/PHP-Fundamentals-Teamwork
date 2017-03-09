@@ -60,6 +60,12 @@
                 </li>
                 <?php else: ?>
                     <li>
+                        <a href="all_questions.php">Questions</a>
+                    </li>
+                    <li>
+                        <a href="ask_question.php">Ask Question</a>
+                    </li>
+                    <li>
                         <a href="logout.php">Logout</a>
                     </li>
                 <?php endif; ?>

@@ -9,7 +9,7 @@ class Question
     private $id;
     private $title;
     private $body;
-    private $user_id;
+    private $username;
 
 
     public function getId()
@@ -41,15 +41,23 @@ class Question
         $this->body = $body;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
 
-    public function getUserId()
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username)
     {
-        return $this->user_id;
+        $this->username = $username;
     }
-    public function setUserId($user_id)
-    {
-        $this->user_id = $user_id;
-    }
+
+
 
 
 
