@@ -65,6 +65,9 @@
                     <li>
                         <a href="ask_question.php">Ask Question</a>
                     </li>
+                	<li>
+                        <a href="editProfile.php">Edit Profile</a>
+                    </li>
                     <li>
                         <a href="logout.php">Logout</a>
                     </li>
