@@ -51,6 +51,9 @@
                 <li>
                     <a href="home.php">Home</a>
                 </li>
+                <li>
+                    <a href="all_questions.php">Questions</a>
+                </li>
                 <?php if(!$sessionService->isLogged()): ?>
                 <li>
                     <a href="login.php">Log in</a>
@@ -59,9 +62,6 @@
                     <a href="register.php">Register</a>
                 </li>
                 <?php else: ?>
-                    <li>
-                        <a href="all_questions.php">Questions</a>
-                    </li>
                     <li>
                         <a href="ask_question.php">Ask Question</a>
                     </li>

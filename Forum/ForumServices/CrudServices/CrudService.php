@@ -71,8 +71,8 @@ questions.user_id = users.id;
 
     public function listQuestionDetails(string $questionId)
     {
-        /* @var $allAnswers AllAnswers*/
-        $allAnswers=new AllAnswers();
+        /* @var $allAnswers QuestionAndAnswers*/
+        $allAnswers=new QuestionAndAnswers();
 
         $answersQuery="
         SELECT 
@@ -103,6 +103,8 @@ questions.user_id = users.id;
 
         $stmt=$this->db->prepare($answersQuery);
         $stmt->execute([$questionId]);
+        $numberOfRowsAffected = $stmt->rowCount();
+        $allAnswers->setNumberOfRowsAffected($numberOfRowsAffected);
 
         $answers = function () use ($stmt) {
             while ($answer = $stmt->fetchObject(Answer::class)){
@@ -110,14 +112,16 @@ questions.user_id = users.id;
             }
         };
 
-        $allAnswers->setAnswers($answers);
+        $allAnswers->setAllAnswers($answers);
+        $allAnswers->setQuestion($question);
 
+        return $allAnswers;
 
-        $questionAndAnswers=new QuestionAndAnswers();
-        $questionAndAnswers->setQuestion($question);
-        $questionAndAnswers->setAllAnswers($allAnswers);
-
-        return $questionAndAnswers;
-
+    }
+    public function cutLongText(string $string, int $length = 100)
+    {
+        if(strlen($string) > 100)
+            return substr($string, 0, $length) . '...';
+        return $string;
     }
 }

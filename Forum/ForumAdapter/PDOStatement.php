@@ -33,4 +33,11 @@ class PDOStatement implements DatabaseStatementInterface
     {
         return $this->stmt->fetchObject($className);
     }
+
+    public function rowCount()
+    {
+        return $this->stmt->rowCount();
+    }
+
+
 }

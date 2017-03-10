@@ -12,4 +12,6 @@ interface CrudServiceInterface
 
     public function listQuestionDetails(string $questionId);
 
+    public function cutLongText(string $string, int $length = 100);
+
 }

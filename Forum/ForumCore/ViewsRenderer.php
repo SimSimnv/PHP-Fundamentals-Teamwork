@@ -17,7 +17,7 @@ class ViewsRenderer
         $this->sessionService=$sessionService;
     }
 
-    public function renderView(string $viewName, $data=null)
+    public function renderView(string $viewName, $data=null, $service = null)
     {
         $sessionService=$this->sessionService;
         include self::VIEWS_FOLDER.DIRECTORY_SEPARATOR."SharedViews/nav_view.php";
