@@ -16,6 +16,7 @@ if(isset($_POST['update'])
     $email = $_POST['email'];
 
     $forumService->editProfile($userId, $username, $email);
+    $sessionService->setUser($userId,$username);
 }
 
 
