@@ -15,8 +15,8 @@ if(isset($_POST['update'])
     && !empty($_POST['password']))
 {
     $userid = $sessionService->getUserId();
-    $username = htmlspecialchars($_POST['username']);
-    $email = htmlspecialchars($_POST['email']);
+    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
     $forumService = new \ForumServices\MainService\ForumService($db,$encryptionService,$sessionService);
