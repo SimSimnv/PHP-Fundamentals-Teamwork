@@ -1,7 +1,4 @@
-<?php /* @var $data \ForumData\Questions\QuestionAndAnswers*/?>
-
-<!-- Page Header -->
-<!-- Set your background image for this header on the line below. -->
+<?php /** @var $data \ForumData\Questions\QuestionAndAnswers */ ?>
 <header class="intro-header" style="background-image: url('ForumStyles/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
@@ -9,49 +6,36 @@
                 <div class="site-heading">
                     <h1>Welcome to Enywas Forum</h1>
                     <hr class="small">
-                    <span class="subheading">Answer question</span>
+                    <span class="subheading">All Questions</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
-
-<!-- Main Content -->
-
-<h1><?= $data->getQuestion()->getTitle();?></h1>
-<h3><?= $data->getQuestion()->getUsername();?></h3>
-<p><?= $data->getQuestion()->getBody();?></p>
-
-
 <div class="container">
-    <h1>Answers</h1>
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <table border="3" style="width: 100%; height: 100%">
-                <thead>
-                <tr>
-                    <th>Author</th>
-                    <th>Email</th>
-                    <th>Body</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <?php foreach ($data->getAllAnswers()->getAnswers() as $answer) :?>
-                    <tr>
-                        <td><?=htmlspecialchars($answer->getAuthor())?></td>
-                        <td><?=htmlspecialchars($answer->getEmail())?></td>
-                        <td><?=htmlspecialchars($answer->getBody())?></td>
-                    </tr>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
+        <div style="text-align: center">
+            <h1>
+                <a href="all_questions.php">Back to Questions</a>
+            </h1>
+            <h3>Question</h3>
+            <div style="background: #f7ecb5;">
+                <p><?= htmlspecialchars($data->getQuestion()->getUsername()) ?></p>
+                <h2><?= htmlspecialchars($data->getQuestion()->getTitle()) ?></h2>
+                <p><?= htmlspecialchars($data->getQuestion()->getBody())?></p>
+            </div>
+            <?php if ($data->areThereAnyAnswers()) : ?>
+                <h3>Answers</h3>
+            <?php endif; ?>
+            <?php foreach ($data->getAllAnswers() as $answer) : ?>
+                <div style="background: #f7ecb5;">
+                    <p><?= htmlspecialchars($answer->getAuthor() == null ? 'Anonymous' : $answer->getAuthor()); ?></p>
+                    <h2><?= htmlspecialchars($answer->getBody()); ?></h2>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>
-
-
-<hr>
 <!-- Registration form -->
 <div class="container">
     <div class="row">
@@ -90,3 +74,4 @@
         </div>
     </div>
 </div>
+

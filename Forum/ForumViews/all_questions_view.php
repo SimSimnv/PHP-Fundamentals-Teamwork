@@ -32,7 +32,7 @@
                             <td><?=htmlspecialchars($question->getUsername())?></td>
                             <td><?= $service->cutLongText(htmlspecialchars($question->getTitle())) ;?></td>
                             <td>
-                                <a href="details_page.php?id=<?= $question->getId(); ?>">More details here</a>
+                                <a href="question.php?id=<?= $question->getId(); ?>">More details here</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
