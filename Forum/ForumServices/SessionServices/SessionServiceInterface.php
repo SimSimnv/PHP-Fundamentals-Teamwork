@@ -11,4 +11,9 @@ interface SessionServiceInterface
     public function isLogged():bool;
     public function getUserId():string;
     public function getUserName():string;
+
+
+    public function setMessage(string $infoMessage, string $messageType);
+    public function getMessage();
+    public function unsetMessage();
 }

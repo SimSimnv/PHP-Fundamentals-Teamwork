@@ -17,6 +17,11 @@
     <!-- Theme CSS -->
     <link href="ForumStyles/css/clean-blog.min.css" rel="stylesheet">
 
+
+    <link href="ForumStyles/css/custom-css.css" rel="stylesheet">
+
+
+
     <!-- Custom Fonts -->
     <link href="ForumStyles/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -78,3 +83,10 @@
     </div>
     <!-- /.container -->
 </nav>
+
+<?php /* @var $sessionService \ForumServices\SessionServices\SessionService*/
+if ($sessionService->checkForMessage()): ?>
+
+    <div class="<?=$sessionService->getMessage()->getType();?>"><?=$sessionService->getMessage()->getMessage();?></div>
+
+<?php $sessionService->unsetMessage(); endif; ?>

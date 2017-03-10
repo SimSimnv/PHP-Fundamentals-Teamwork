@@ -5,6 +5,7 @@ namespace ForumServices\MainService;
 
 
 use ForumAdapter\DatabaseInterface;
+use ForumCore\ForumException;
 use ForumData\Users\User;
 use ForumServices\EncryptionServices\EncryptionServiceInterface;
 use ForumServices\SessionServices\SessionService;
@@ -30,7 +31,7 @@ class ForumService implements ForumServiceInterface
     public function register(string $username, string $email, string $password, string $confirm)
     {
         if($password!=$confirm){
-            throw new \Exception("Passwords mismatch!");
+            throw new ForumException("Passwords mismatch!");
         }
 
         $hashPassword=$this->encryptionService->encrypt($password);
@@ -51,7 +52,7 @@ class ForumService implements ForumServiceInterface
 
         if($result===false){
             //TODO check what caused failure ->username taken or password taken
-            throw new \Exception("Couldn't register!");
+            throw new ForumException("Couldn't register!");
         }
 
     }
@@ -64,7 +65,7 @@ class ForumService implements ForumServiceInterface
         $user=$stmt->fetchObject(User::class);
 
         if(!$user){
-            throw new \Exception("User does not exist!");
+            throw new ForumException("User does not exist!");
         }
 
         /* @var $user User*/
@@ -72,7 +73,7 @@ class ForumService implements ForumServiceInterface
         $passwordMatch=$this->encryptionService->isValid($passwordHash,$password);
 
         if(!$passwordMatch){
-            throw new \Exception("Incorrect password!");
+            throw new ForumException("Incorrect password!");
         }
 
         //Adding userId and username to session
@@ -96,7 +97,7 @@ class ForumService implements ForumServiceInterface
 
         if($result===false){
             //TODO check what caused failure ->username taken or password taken
-            throw new \Exception("Couldn't update your data!");
+            throw new ForumException("Couldn't update your data!");
         }
 
    }
@@ -105,7 +106,7 @@ class ForumService implements ForumServiceInterface
     {
         // check for new password match
         if($newPassword!=$confirm){
-            throw new \Exception("Passwords don't match!");
+            throw new ForumException("Passwords don't match!");
         }
 
         $hashNewPassword=$this->encryptionService->encrypt($newPassword);
@@ -123,7 +124,7 @@ class ForumService implements ForumServiceInterface
 
         if($result===false){
             //TODO check what caused failure ->username taken or password taken
-            throw new \Exception("Couldn't update your password!");
+            throw new ForumException("Couldn't update your password!");
         }
 
     }

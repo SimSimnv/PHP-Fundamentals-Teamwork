@@ -43,6 +43,9 @@
 <!-- Theme JavaScript -->
 <script src="ForumStyles/js/clean-blog.min.js"></script>
 
+<script src="ForumStyles/js/custom-js.js"></script>
+
+
 </body>
 
 </html>

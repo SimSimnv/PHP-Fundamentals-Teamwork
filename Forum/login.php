@@ -11,6 +11,8 @@ if(isset($_POST['login'])
 {
     $forumService=new \ForumServices\MainService\ForumService($db,$encryptionService,$sessionService);
     $forumService->login($_POST['username'],$_POST['password']);
+
+    $sessionService->setMessage('Login successful.','info');
     header("Location: home.php");
     exit;
 }

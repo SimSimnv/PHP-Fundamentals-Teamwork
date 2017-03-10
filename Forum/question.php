@@ -9,6 +9,7 @@ $crudService=new \ForumServices\CrudServices\CrudService($db);
 $id = $_GET['id'];
 if(isset($_POST['answerQuestion']) && !empty($_POST['body'])){
     $crudService->answerQuestion($id, $_POST['author'], $_POST['email'], $_POST['body']);
+    $sessionService->setMessage('Answered question.','info');
 }
 $questionDetails=$crudService->listQuestionDetails($id);
 $viewsRenderer->renderView('question_view',$questionDetails);

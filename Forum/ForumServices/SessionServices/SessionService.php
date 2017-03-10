@@ -34,4 +34,30 @@ class SessionService implements SessionServiceInterface
         }
         return $_SESSION['username'];
     }
+
+
+    public function setMessage(string $infoMessage, string $messageType)
+    {
+        $type=strtolower($messageType);
+        if($type!='error' && $type!='info'){
+            throw new \Error("Message can be error or info!");
+        }
+        $_SESSION['infoMessage']=$infoMessage;
+        $_SESSION['messageType']=$messageType;
+    }
+    public function getMessage():Message
+    {
+        if(!$this->checkForMessage()){
+            throw new \Error("No message");
+        }
+        return new Message($_SESSION['infoMessage'],$_SESSION['messageType']);
+    }
+    public function unsetMessage()
+    {
+        unset($_SESSION['infoMessage']);
+        unset($_SESSION['messageType']);
+    }
+    public function checkForMessage():bool{
+        return isset($_SESSION['infoMessage']);
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace ForumServices\CrudServices;
 
+use ForumCore\ForumException;
 use ForumData\Answers\AllAnswers;
 use ForumData\Answers\Answer;
 use ForumData\Questions\AllQuestions;
@@ -65,7 +66,7 @@ questions.user_id = users.id;
         $stmt=$this->db->prepare($answerQuery);
         $result=$stmt->execute([$author,$email,$body,$questionId]);
         if($result===false){
-            throw new \Exception("Invalid answer");
+            throw new ForumException("Invalid answer");
         }
     }
 

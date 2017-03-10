@@ -5,6 +5,18 @@ spl_autoload_register(function($class){
     include $class.'.php';
 });
 
+$sessionService=new \ForumServices\SessionServices\SessionService();
+
+set_exception_handler(function(\ForumCore\ForumException $e) use ($sessionService){
+    $infoMessage=$e->getMessage();
+    $sessionService->setMessage($infoMessage,'error');
+
+    $location=$e->getTrace()[0]['function'];
+    header("Location: {$location}.php");
+    exit;
+});
+
+
 $db= new \ForumAdapter\PDODatabase(
     \ForumConfig\DBConfig::DB_HOST,
     \ForumConfig\DBConfig::DB_NAME,
@@ -13,5 +25,4 @@ $db= new \ForumAdapter\PDODatabase(
 );
 
 $encryptionService=new \ForumServices\EncryptionServices\EncryptionService();
-$sessionService=new \ForumServices\SessionServices\SessionService();
 $viewsRenderer=new \ForumCore\ViewsRenderer($sessionService);

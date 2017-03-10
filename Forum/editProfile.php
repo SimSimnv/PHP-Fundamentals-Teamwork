@@ -17,6 +17,7 @@ if(isset($_POST['update'])
 
     $forumService->editProfile($userId, $username, $email);
     $sessionService->setUser($userId,$username);
+    $sessionService->setMessage('Profile edit successful.','info');
 }
 
 
@@ -29,6 +30,7 @@ if(isset($_POST['changePassword'])
     $confirm = $_POST['confirm'];
 
     $forumService->changePassword($userId, $newPassword, $confirm);
+    $sessionService->setMessage('Password change successful.','info');
 }
 
 

@@ -13,7 +13,9 @@ if(isset($_POST['register'])
 {
     $forumService=new \ForumServices\MainService\ForumService($db,$encryptionService,$sessionService);
     $forumService->register($_POST['username'],$_POST['email'],$_POST['password'],$_POST['confirm']);
+    $sessionService->setMessage('Register successful.','info');
     header("Location: login.php");
+    exit;
 }
 
 

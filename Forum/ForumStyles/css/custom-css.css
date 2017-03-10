@@ -1,0 +1,10 @@
+body div.error{
+    text-align: center;
+    background-color: #d40000;
+    color: #ffffff;
+}
+body div.info{
+    text-align: center;
+    background-color: #00a732;
+    color: #ffffff;
+}
