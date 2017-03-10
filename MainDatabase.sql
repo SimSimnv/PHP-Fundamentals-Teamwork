@@ -21,20 +21,26 @@ USE `enywas`;
 DROP TABLE IF EXISTS `answers`;
 CREATE TABLE IF NOT EXISTS `answers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `author` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `body` text COLLATE utf8_unicode_ci NOT NULL,
-  `user_id` int(11) NOT NULL,
   `question_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK__users` (`user_id`),
   KEY `FK__questions` (`question_id`),
-  CONSTRAINT `FK__questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`),
-  CONSTRAINT `FK__users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  CONSTRAINT `FK__questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table enywas.answers: ~0 rows (approximately)
+-- Dumping data for table enywas.answers: ~8 rows (approximately)
 /*!40000 ALTER TABLE `answers` DISABLE KEYS */;
-INSERT INTO `answers` (`id`, `body`, `user_id`, `question_id`) VALUES
-	(2, 'This is a test answer', 1, 1);
+INSERT INTO `answers` (`id`, `author`, `email`, `body`, `question_id`) VALUES
+	(2, NULL, NULL, 'This is a test answer', 1),
+	(3, 'Konstantin', 'koceto@mail.com', 'This is my answer', 1),
+	(4, 'Pesho', 'pesho@mail.com', 'This is the next answer', 2),
+	(5, '', '', 'I am a nobody', 2),
+	(7, '', '', 'sad', 2),
+	(8, 'Novak', 'novak@mail.copm', 'asdasd\r\n', 2),
+	(9, 'asd', 'asd@asd.asd', 'asd', 2),
+	(14, 'Quest User', 'guest@mail.com', 'Heloooo', 1);
 /*!40000 ALTER TABLE `answers` ENABLE KEYS */;
 
 -- Dumping structure for table enywas.questions
@@ -47,12 +53,13 @@ CREATE TABLE IF NOT EXISTS `questions` (
   PRIMARY KEY (`id`),
   KEY `FK_questions_users` (`user_id`),
   CONSTRAINT `FK_questions_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table enywas.questions: ~1 rows (approximately)
+-- Dumping data for table enywas.questions: ~2 rows (approximately)
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
 INSERT INTO `questions` (`id`, `title`, `body`, `user_id`) VALUES
-	(1, 'Test Question', 'This is a test', 1);
+	(1, 'Test Question', 'This is a test', 1),
+	(2, 'New Question', 'This is a new question\r\nasdfafadsf', 3);
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 
 -- Dumping structure for table enywas.users
@@ -65,13 +72,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table enywas.users: ~1 rows (approximately)
+-- Dumping data for table enywas.users: ~5 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 	(1, 'testUser', 'testuser@mail.com', '123'),
-	(2, 'NewUser', 'New@mail.com', '$2y$10$zzqtZ40//w9sFkcu9EsA8uz7eDEFizaYtE.vFJk/ZSy3brZI.JYdC'),
+	(2, 'asd', 'asd@mail.com', '$2y$10$zzqtZ40//w9sFkcu9EsA8uz7eDEFizaYtE.vFJk/ZSy3brZI.JYdC'),
 	(3, 'Ivan', 'ivan@mail.com', '$2y$10$UXfu0RPKX5Q8quk.M2Em8eaqVViXDHevomwhRC2kQV6ss7MlhA2tu'),
 	(4, 'Kolio', 'kolio@abv.bg', '$2y$10$PaS3EF2ez7CoO594ywcKjusr6u4lVG11aOWQkDjZbzoeb6qNHp/Wu'),
 	(5, 'Stens', 'Stens@abv.bg', '$2y$10$JYGagMj21CKpRxpsvfZae.gvHZyvK4dZ1K.OinQFnvkxXhwB68/9S');
