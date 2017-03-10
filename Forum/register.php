@@ -12,7 +12,7 @@ if(isset($_POST['register'])
     && !empty($_POST['password']))
 {
     $forumService=new \ForumServices\MainService\ForumService($db,$encryptionService,$sessionService);
-    $forumService->register($_POST['username'],$_POST['email'],$_POST['password'],$_POST['confirm']);
+    $forumService->register(htmlspecialchars($_POST['username']),htmlspecialchars($_POST['email']),$_POST['password'],$_POST['confirm']);
     header("Location: login.php");
 }
 
