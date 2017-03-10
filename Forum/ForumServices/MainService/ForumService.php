@@ -79,21 +79,10 @@ class ForumService implements ForumServiceInterface
         $this->sessionService->setUser($user->getId(),$user->getUsername());
     }
 
-    public function editProfile (int $id, string $username, string $email, string $password)
+    public function editProfile (int $id, string $username, string $email)
    {
-       $loginQuery="SELECT id,password,username FROM users WHERE id=?";
-       $stmt=$this->db->prepare($loginQuery);
-       $stmt->execute([$id]);
-       $user=$stmt->fetchObject(User::class);
-//check for valid current password
-       $currnetPassword=$user->getPassword();
-       $passwordMatch=$this->encryptionService->isValid($currnetPassword,$password);
 
-       if(!$passwordMatch){
-           throw new \Exception("Incorrect password!");
-       }
-
-//update user details
+        //update user details
         $updateQuery="UPDATE
                         `users`
                     SET
@@ -112,31 +101,16 @@ class ForumService implements ForumServiceInterface
 
    }
 
-    public function changePassword (int $id, string $oldpassword, string $newpassword, string $confirm)
+    public function changePassword (int $id, string $newPassword, string $confirm)
     {
         // check for new password match
-        if($newpassword!=$confirm){
-            throw new \Exception("New Passwords don't match!");
-        }
-        $loginQuery="SELECT id,password,username FROM users WHERE id=?";
-        $stmt=$this->db->prepare($loginQuery);
-        $stmt->execute([$id]);
-        $user=$stmt->fetchObject(User::class);
-//check for valid current password
-        $currnetPassword=$user->getPassword();
-        $passwordMatch=$this->encryptionService->isValid($currnetPassword,$oldpassword);
-
-        if(!$passwordMatch){
-            throw new \Exception("Incorrect old password!");
+        if($newPassword!=$confirm){
+            throw new \Exception("Passwords don't match!");
         }
 
-        if($newpassword!=$confirm){
-            throw new \Exception("New Passwords don't match!");
-        }
+        $hashNewPassword=$this->encryptionService->encrypt($newPassword);
 
-        $hashNewPassword=$this->encryptionService->encrypt($newpassword);
-
-//update user details
+        //update user details
         $updateQuery="UPDATE
                         `users`
                     SET
@@ -154,4 +128,12 @@ class ForumService implements ForumServiceInterface
 
     }
 
+
+    public function getUserInfo(string $userId): User
+    {
+        $userQuery="SELECT * FROM users WHERE id=?";
+        $stmt=$this->db->prepare($userQuery);
+        $stmt->execute([$userId]);
+        return $stmt->fetchObject(User::class);
+    }
 }

@@ -1,6 +1,4 @@
-<?php
-
-?>
+<?php /* @var $data \ForumData\Users\User*/?>
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
 <header class="intro-header" style="background-image: url('ForumStyles/img/home-bg.jpg')">
@@ -29,21 +27,14 @@
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Enter your name" id="name" name="username" required data-validation-required-message="Please enter your name.">
+                        <input type="text" class="form-control" placeholder="Enter your name" id="name" name="username" value="<?= $data->getUsername();?>" required data-validation-required-message="Please enter your name.">
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label>Email Address</label>
-                        <input type="email" class="form-control" placeholder="Enter Your Email Address" id="email" name="email" required data-validation-required-message="Please enter your email address.">
-                    </div>
-                </div>
-                <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Enter your Password" id="password" name="password" required data-validation-required-message="Please enter your old password.">
-                        <p class="help-block text-danger"></p>
+                        <input type="email" class="form-control" placeholder="Enter Your Email Address" id="email" name="email" value="<?= $data->getEmail();?>" required data-validation-required-message="Please enter your email address.">
                     </div>
                 </div>
                 <br>
@@ -67,13 +58,6 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <p>Change your password</p>
             <form name="changePassword" id="contactForm" novalidate method="post">
-                <div class="row control-group">
-                    <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Old Password</label>
-                        <input type="password" class="form-control" placeholder="Old Password" id="oldpassword" name="oldpassword" required data-validation-required-message="Please enter your old password.">
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
                         <label>New Password</label>
