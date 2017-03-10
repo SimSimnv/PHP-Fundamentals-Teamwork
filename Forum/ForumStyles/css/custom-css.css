@@ -8,3 +8,14 @@ body div.info{
     background-color: #00a732;
     color: #ffffff;
 }
+
+body div.answer-form{
+    display: none;
+}
+.answer-button-wrapper{
+    text-align: center;
+}
+#answer-button{
+    padding: 20px;
+    font-size: 1.2em;
+}
