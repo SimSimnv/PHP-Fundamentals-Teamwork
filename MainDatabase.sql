@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `answers` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table enywas.answers: ~8 rows (approximately)
+DELETE FROM `answers`;
 /*!40000 ALTER TABLE `answers` DISABLE KEYS */;
 INSERT INTO `answers` (`id`, `author`, `email`, `body`, `question_id`) VALUES
 	(2, NULL, NULL, 'This is a test answer', 1),
@@ -47,19 +48,21 @@ INSERT INTO `answers` (`id`, `author`, `email`, `body`, `question_id`) VALUES
 DROP TABLE IF EXISTS `questions`;
 CREATE TABLE IF NOT EXISTS `questions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `body` text COLLATE utf8_unicode_ci NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_questions_users` (`user_id`),
   CONSTRAINT `FK_questions_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table enywas.questions: ~2 rows (approximately)
+-- Dumping data for table enywas.questions: ~3 rows (approximately)
+DELETE FROM `questions`;
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
 INSERT INTO `questions` (`id`, `title`, `body`, `user_id`) VALUES
 	(1, 'Test Question', 'This is a test', 1),
-	(2, 'New Question', 'This is a new question\r\nasdfafadsf', 3);
+	(2, 'New Question', 'This is a new question\r\nasdfafadsf', 3),
+	(4, 'Her debut album The Fame (2008) was a critical and commercial success that produced international chart-topping singles such as "Just Dance" and "Poker Face". A follow-up EP, The Fame Monster (2009), was met with a similar reception and "Bad Romance", "Te', 'Her debut album The Fame (2008) was a critical and commercial success that produced international chart-topping singles such as "Just Dance" and "Poker Face". A follow-up EP, The Fame Monster (2009), was met with a similar reception and "Bad Romance", "Telephone", and "Alejandro" were released, becoming successful singles. Her second full-length album Born This Way was released in 2011, topping the charts in more than 20 countries, including the United States, where it sold over one million copies in its first week. The album produced the number-one single "Born This Way". Her third album Artpop, released in 2013, topped the US charts and included the successful single "Applause". In 2014, Gaga released a collaborative jazz album with Tony Bennett titled Cheek to Cheek, which became her third consecutive number one in the United States. For her work in the television series American Horror Story: Hotel, Gaga won a Golden Globe Award in 2016. With her fifth studio album Joanne (2016), she became the first woman to have four US number one albums in the 2010s. In February 2017, Gaga headlined the Super Bowl LI halftime show which had a total audience of over 150 million across various platforms worldwide, making it the most viewed musical event in history.', 6);
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 
 -- Dumping structure for table enywas.users
@@ -72,16 +75,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table enywas.users: ~5 rows (approximately)
+-- Dumping data for table enywas.users: ~6 rows (approximately)
+DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 	(1, 'testUser', 'testuser@mail.com', '123'),
 	(2, 'asd', 'asd@mail.com', '$2y$10$zzqtZ40//w9sFkcu9EsA8uz7eDEFizaYtE.vFJk/ZSy3brZI.JYdC'),
 	(3, 'Ivan', 'ivan@mail.com', '$2y$10$UXfu0RPKX5Q8quk.M2Em8eaqVViXDHevomwhRC2kQV6ss7MlhA2tu'),
 	(4, 'Kolio', 'kolio@abv.bg', '$2y$10$PaS3EF2ez7CoO594ywcKjusr6u4lVG11aOWQkDjZbzoeb6qNHp/Wu'),
-	(5, 'Stens', 'Stens@abv.bg', '$2y$10$JYGagMj21CKpRxpsvfZae.gvHZyvK4dZ1K.OinQFnvkxXhwB68/9S');
+	(5, 'Stens', 'Stens@abv.bg', '$2y$10$JYGagMj21CKpRxpsvfZae.gvHZyvK4dZ1K.OinQFnvkxXhwB68/9S'),
+	(6, 'zotakk', 'zotak3105@gmail.com', '$2y$10$1bxcBv7TKKM2OtUL4FMWUOqxhOkkqrVL4zIpNA1QkBxye1.dBRGZy');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
