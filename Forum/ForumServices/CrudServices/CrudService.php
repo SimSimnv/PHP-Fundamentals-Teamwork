@@ -2,8 +2,11 @@
 
 namespace ForumServices\CrudServices;
 
+use ForumData\Answers\AllAnswers;
+use ForumData\Answers\Answer;
 use ForumData\Questions\AllQuestions;
 use ForumData\Questions\Question;
+use ForumData\Questions\QuestionAndAnswers;
 use ForumServices\CrudServices\CrudServiceInterface;
 use ForumAdapter\DatabaseInterface;
 
@@ -48,6 +51,73 @@ questions.user_id = users.id;
         $allQuestions->setQuestions($questions);
 
         return $allQuestions;
+
+    }
+
+    public function answerQuestion(string $questionId, string $author, string $email, string $body)
+    {
+        $answerQuery="
+            INSERT INTO 
+            answers
+            (author,email,body,question_id) 
+            VALUES
+            (?,?,?,?)";
+        $stmt=$this->db->prepare($answerQuery);
+        $result=$stmt->execute([$author,$email,$body,$questionId]);
+        if($result===false){
+            throw new \Exception("Invalid answer");
+        }
+    }
+
+    public function listQuestionDetails(string $questionId)
+    {
+        /* @var $allAnswers AllAnswers*/
+        $allAnswers=new AllAnswers();
+
+        $answersQuery="
+        SELECT 
+        *
+        FROM
+        answers
+        WHERE
+        question_id=?";
+
+        $questionQuery="
+            SELECT 
+            q.id,
+            q.title,
+            q.body,
+            u.username
+            FROM
+            questions AS q
+            INNER JOIN 
+            users AS u ON
+            u.id=q.user_id
+            WHERE
+            q.id=?";
+
+        $questionStmt=$this->db->prepare($questionQuery);
+        $questionStmt->execute([$questionId]);
+        $question=$questionStmt->fetchObject(Question::class);
+
+
+        $stmt=$this->db->prepare($answersQuery);
+        $stmt->execute([$questionId]);
+
+        $answers = function () use ($stmt) {
+            while ($answer = $stmt->fetchObject(Answer::class)){
+                yield $answer;
+            }
+        };
+
+        $allAnswers->setAnswers($answers);
+
+
+        $questionAndAnswers=new QuestionAndAnswers();
+        $questionAndAnswers->setQuestion($question);
+        $questionAndAnswers->setAllAnswers($allAnswers);
+
+        return $questionAndAnswers;
 
     }
 }
