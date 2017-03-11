@@ -1,0 +1,18 @@
+.box{
+    display: none;
+    width: 100%;
+}
+
+a:hover + .box,.box:hover{
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+.question-and-answer-container{
+    background: #f7ecb5;
+    text-align: center;
+}
+.page-hint{
+    width: 95%;
+    height: 400px;
+}

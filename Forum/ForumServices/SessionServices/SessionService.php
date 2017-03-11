@@ -60,4 +60,11 @@ class SessionService implements SessionServiceInterface
     public function checkForMessage():bool{
         return isset($_SESSION['infoMessage']);
     }
+
+    public function redirect($file)
+    {
+        header("location:$file");
+        exit;
+    }
+
 }
