@@ -20,7 +20,7 @@
 
     <link href="ForumStyles/css/custom-css.css" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="ForumStyles/css/forum-custom-styles.css" type="text/css">
 
     <!-- Custom Fonts -->
     <link href="ForumStyles/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -37,7 +37,6 @@
 </head>
 
 <body>
-
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
