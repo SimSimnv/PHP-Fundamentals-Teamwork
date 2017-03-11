@@ -6,7 +6,7 @@
                 <div class="site-heading">
                     <h1>Welcome to Enywas Forum</h1>
                     <hr class="small">
-                    <span class="subheading"><?= htmlspecialchars($data->getQuestion()->getTitle()) ?></span>
+                    <span class="subheading">All Questions</span>
                 </div>
             </div>
         </div>
