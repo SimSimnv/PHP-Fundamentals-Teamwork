@@ -11,6 +11,7 @@
 
     <title>Enywas Forum</title>
 
+
     <!-- Bootstrap Core CSS -->
     <link href="ForumStyles/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -55,6 +56,7 @@
         <form action="question.php" method="post">
             <div class="navbar-header page-scroll">
                 <input type='text' name='title' value='' placeholder="Search question by title" class='auto'>
+                <input type="hidden" name="url" value="<?= basename($_SERVER['PHP_SELF']) ?>">
             </div>
         </form>
 
