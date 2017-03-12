@@ -11,4 +11,5 @@ interface DatabaseStatementInterface
     public function fetchAll();
     public function fetchObject($className);
     public function rowCount();
+    public function errorInfo();
 }

@@ -51,8 +51,13 @@ class ForumService implements ForumServiceInterface
         $result=$stmt->execute([$username,$email,$hashPassword]);
 
         if($result===false){
-            //TODO check what caused failure ->username taken or password taken
-            throw new ForumException("Couldn't register!");
+            $exceptionMsg="Couldn't register profile";
+            $dataTaken=preg_match("/key '(.+)'/",$stmt->errorInfo()[2],$matches);
+            if($dataTaken==1){
+                $takenValue=ucfirst($matches[1]);
+                $exceptionMsg="{$takenValue} is taken!";
+            }
+            throw new ForumException($exceptionMsg);
         }
 
     }
@@ -96,8 +101,13 @@ class ForumService implements ForumServiceInterface
         $result=$stmt->execute([$username,$email,$id]);
 
         if($result===false){
-            //TODO check what caused failure ->username taken or password taken
-            throw new ForumException("Couldn't update your data!");
+            $exceptionMsg="Couldn't update profile";
+            $dataTaken=preg_match("/key '(.+)'/",$stmt->errorInfo()[2],$matches);
+            if($dataTaken==1){
+                $takenValue=ucfirst($matches[1]);
+                $exceptionMsg="{$takenValue} is taken!";
+            }
+            throw new ForumException($exceptionMsg);
         }
 
    }
@@ -123,12 +133,10 @@ class ForumService implements ForumServiceInterface
         $result=$stmt->execute([$hashNewPassword,$id]);
 
         if($result===false){
-            //TODO check what caused failure ->username taken or password taken
             throw new ForumException("Couldn't update your password!");
         }
 
     }
-
 
     public function getUserInfo(string $userId): User
     {
