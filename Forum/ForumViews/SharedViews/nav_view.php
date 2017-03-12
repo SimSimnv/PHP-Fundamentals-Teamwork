@@ -20,7 +20,10 @@
 
     <link href="ForumStyles/css/custom-css.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="ForumStyles/css/forum-custom-styles.css" type="text/css">
+
+
+    <link rel="stylesheet" href="ForumStyles/css/jquery-ui.css" type="text/css">
+
 
     <!-- Custom Fonts -->
     <link href="ForumStyles/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -34,6 +37,14 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" href="ForumStyles/css/forum-custom-styles.css" type="text/css">
+
+    <style>
+        .ui-autocomplete{
+            width: 1%;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -41,13 +52,11 @@
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                Menu <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="">Start Bootstrap</a>
-        </div>
+        <form action="question.php" method="post">
+            <div class="navbar-header page-scroll">
+                <input type='text' name='title' value='' placeholder="Search question by title" class='auto'>
+            </div>
+        </form>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

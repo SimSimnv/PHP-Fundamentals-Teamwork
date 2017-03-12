@@ -119,6 +119,60 @@ questions.user_id = users.id;
         return $allAnswers;
 
     }
+
+
+    public function listQuestionDetailsByTitle(string $title)
+    {
+        /* @var $allAnswers QuestionAndAnswers*/
+        $allAnswers=new QuestionAndAnswers();
+
+        $answersQuery="
+        SELECT 
+        *
+        FROM
+        answers
+        WHERE
+        question_id=?";
+
+        $questionQuery="
+            SELECT 
+            id,
+            title,
+            body
+            FROM
+            questions 
+            WHERE
+            title = ?";
+
+        $questionStmt=$this->db->prepare($questionQuery);
+        $questionStmt->execute([$title]);
+        /**
+         * @var $question Question
+         */
+        $question=$questionStmt->fetchObject(Question::class);
+        if($question === false){
+            return false;
+        }
+        $id = $question->getId();
+        $stmt=$this->db->prepare($answersQuery);
+        $stmt->execute([$id]);
+        $numberOfRowsAffected = $stmt->rowCount();
+        $allAnswers->setNumberOfRowsAffected($numberOfRowsAffected);
+
+        $answers = function () use ($stmt) {
+            while ($answer = $stmt->fetchObject(Answer::class)){
+                yield $answer;
+            }
+        };
+
+        $allAnswers->setAllAnswers($answers);
+        $allAnswers->setQuestion($question);
+
+        return $allAnswers;
+
+    }
+
+
     public function cutLongText(string $string, int $length = 100)
     {
         if(strlen($string) > 100)

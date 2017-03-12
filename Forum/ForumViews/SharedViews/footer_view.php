@@ -45,7 +45,7 @@
 
 <script src="ForumStyles/js/custom-js.js"></script>
 
+<script src="ForumStyles/js/search.js"></script>
 
-</body>
-
-</html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
