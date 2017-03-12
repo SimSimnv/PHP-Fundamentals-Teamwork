@@ -16,4 +16,6 @@ interface SessionServiceInterface
     public function setMessage(string $infoMessage, string $messageType);
     public function getMessage();
     public function unsetMessage();
+
+    public function redirect($file);
 }
