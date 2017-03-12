@@ -19,3 +19,7 @@ body div.answer-form{
     padding: 20px;
     font-size: 1.2em;
 }
+body div.container>a.current-page{
+    color: dodgerblue;
+    font-weight: bold;
+}

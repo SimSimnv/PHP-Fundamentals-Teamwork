@@ -25,5 +25,20 @@
         <?php endforeach; ?>
     </div>
 </div>
+<div class="container text-center">
+
+    <?php if($service->getCurrentPage()>1):?>
+        <a href="all_questions.php?page=<?=$service->getCurrentPage()-1?>">Previous</a>
+    <?php endif;?>
+
+    <?php for($i=1; $i<=$service->getMaxPage(); $i++):?>
+        <a href="all_questions.php?page=<?=$i;?>" class="<?=($service->getCurrentPage()==$i)?'current-page':'page';?>">[<?=$i?>]</a>
+    <?php endfor;?>
+
+    <?php if($service->getCurrentPage()<$service->getMaxPage()):?>
+        <a href="all_questions.php?page=<?=$service->getCurrentPage()+1?>">Next</a>
+    <?php endif;?>
+
+</div>
 
 

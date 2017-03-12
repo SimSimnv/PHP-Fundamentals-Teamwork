@@ -27,23 +27,31 @@ class CrudService implements CrudServiceInterface
         $stmt->execute([$title,$body,$userId]);
     }
 
-    public function listAllQuestions()
-    {
+    private function listQuestions($limitQuery=null){
         $allQuestions = new AllQuestions();
-        $stmt = $this->db->prepare('SELECT 
-questions.id, 
-questions.title, 
-questions.body,
-questions.user_id,
-users.username
-FROM 
-questions
-INNER JOIN 
-users
-ON 
-questions.user_id = users.id;
-');
+        $questionsQuery="
+          SELECT 
+            questions.id, 
+            questions.title, 
+            questions.body,
+            questions.user_id,
+            users.username
+          FROM 
+            questions
+          INNER JOIN 
+            users
+          ON 
+            questions.user_id = users.id
+          ORDER BY questions.id ASC
+         ";
+
+        if($limitQuery!==null){
+            $questionsQuery.=$limitQuery;
+        }
+        $stmt = $this->db->prepare($questionsQuery);
         $stmt->execute();
+
+
         $questions = function () use ($stmt) {
             while ($question = $stmt->fetchObject(Question::class)){
                 yield $question;
@@ -52,7 +60,40 @@ questions.user_id = users.id;
         $allQuestions->setQuestions($questions);
 
         return $allQuestions;
+    }
 
+    public function listAllQuestions()
+    {
+        return $this->listQuestions();
+    }
+
+    public function listQuestionsByPage(int $page)
+    {
+        $maxPage=$this->getMaxPage();
+        if($page>$maxPage){
+            $page=$maxPage;
+        }
+
+        $page--;
+        if($page<0){
+            $page=0;
+        }
+        $page*=5;
+
+        $limitQuery="LIMIT {$page} , 5";
+        return $this->listQuestions($limitQuery);
+    }
+
+    public function getMaxPage(): int
+    {
+        $stmt=$this->db->prepare("SELECT COUNT(*) FROM questions");
+        $stmt->execute();
+        $totalEntries=$stmt->fetch()['COUNT(*)'];
+        return ceil($totalEntries/5);
+    }
+
+    public function getCurrentPage():int{
+        return intval(isset($_GET['page'])?$_GET['page']:1);
     }
 
     public function answerQuestion(string $questionId, string $author, string $email, string $body)
@@ -120,7 +161,6 @@ questions.user_id = users.id;
 
     }
 
-
     public function listQuestionDetailsByTitle(string $title)
     {
         /* @var $allAnswers QuestionAndAnswers*/
@@ -172,11 +212,11 @@ questions.user_id = users.id;
 
     }
 
-
     public function cutLongText(string $string, int $length = 100)
     {
         if(strlen($string) > 100)
             return substr($string, 0, $length) . '...';
         return $string;
     }
+
 }

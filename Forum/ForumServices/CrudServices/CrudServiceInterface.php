@@ -8,6 +8,10 @@ interface CrudServiceInterface
 
     public function listAllQuestions();
 
+    public function listQuestionsByPage(int $page);
+
+    public function getMaxPage():int;
+
     public function answerQuestion(string $questionId, string $author, string $email, string $body);
 
     public function listQuestionDetails(string $questionId);
