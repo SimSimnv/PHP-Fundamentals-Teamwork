@@ -55,7 +55,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <form action="question.php" method="post">
             <div class="navbar-header page-scroll">
-                <input type='text' name='title' value='' placeholder="Search question by title" class='auto'>
+                <input type='text' name='title' value='' placeholder="Search question..." class='auto'>
                 <input type="hidden" name="url" value="<?= basename($_SERVER['PHP_SELF']) ?>">
             </div>
         </form>
