@@ -30,6 +30,6 @@
     </li>
 </ul>
 <?php else: ?>
-    <h1>Greetings <?=$sessionService->getUserName();?></h1>
+    <h1 style="text-align: center">Greetings <?=$sessionService->getUserName();?></h1>
 <?php endif; ?>
 <hr>
