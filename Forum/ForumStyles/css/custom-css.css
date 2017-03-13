@@ -31,3 +31,6 @@ body div>a.forum-tag{
     font-size: 0.9em;
     padding: 2px;
 }
+body div>a.forum-tag:hover{
+    background-color: rgba(175, 145, 77, 0.98);
+}

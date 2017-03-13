@@ -81,7 +81,7 @@ class CrudService implements CrudServiceInterface
             users
           ON 
             questions.user_id = users.id
-          ORDER BY questions.id ASC
+          ORDER BY questions.id DESC
          ";
 
         if($limitQuery!==null){
