@@ -33,6 +33,13 @@
                     </div>
                 </div>
                 <br>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Tags</label>
+                        <input type="text" class="form-control" placeholder="Comma separated tags" id="tags" name="tags">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
                 <div id="success"></div>
                 <div class="row">
                     <div class="form-group col-xs-12">

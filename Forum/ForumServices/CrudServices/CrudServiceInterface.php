@@ -4,7 +4,9 @@ namespace ForumServices\CrudServices;
 
 interface CrudServiceInterface
 {
-    public function askQuestion($title,$body,$userId);
+    public function askQuestion($title,$body,$userId,$tagsString=null);
+
+    public function addTagsToQuestion(string $tagsString, $questionId);
 
     public function listAllQuestions();
 

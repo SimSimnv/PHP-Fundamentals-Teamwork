@@ -4,13 +4,28 @@
 namespace ForumData\Questions;
 
 
+use ForumData\Tags\Tag;
+
 class Question
 {
     private $id;
     private $title;
     private $body;
     private $username;
+    private $tags;
 
+
+    public function getTags()
+    {
+        return $this->tags;
+    }
+    /**
+     * @var $tags Tag[]|\Generator
+     */
+    public function setTags(callable $tags)
+    {
+        $this->tags = $tags();
+    }
 
     public function getId()
     {

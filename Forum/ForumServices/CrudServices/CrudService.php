@@ -8,6 +8,7 @@ use ForumData\Answers\Answer;
 use ForumData\Questions\AllQuestions;
 use ForumData\Questions\Question;
 use ForumData\Questions\QuestionAndAnswers;
+use ForumData\Tags\Tag;
 use ForumServices\CrudServices\CrudServiceInterface;
 use ForumAdapter\DatabaseInterface;
 
@@ -21,10 +22,48 @@ class CrudService implements CrudServiceInterface
         $this->db=$db;
     }
 
-    public function askQuestion($title, $body, $userId)
+    public function askQuestion($title, $body, $userId, $tagsString=null)
     {
         $stmt = $this->db->prepare('INSERT INTO questions (title,body,user_id) VALUES (?,?,?)');
         $stmt->execute([$title,$body,$userId]);
+
+        $questionId=$this->db->lastInsertId();
+        $this->addTagsToQuestion($tagsString,$questionId);
+    }
+
+    public function addTagsToQuestion(string $tagsString, $questionId)
+    {
+        $tagsString=strtolower($tagsString);
+        $tagsArr = preg_split('/,/', $tagsString, NULL, PREG_SPLIT_NO_EMPTY);
+        $tagsArr=array_filter(array_map('trim',$tagsArr),function($tag){
+            return $tag!='';
+        });
+
+        foreach ($tagsArr as $tag){
+            //creating tags that don't exist
+            $stmt=$this->db->prepare("INSERT INTO tags (`name`) VALUES (?)");
+            $stmt->execute([$tag]);
+
+            //inserting question and tag id to intermediate table
+            $questionsTagsQuery="
+            INSERT INTO 
+              questions_tags 
+                (`question_id`,`tag_id`) 
+            VALUES 
+            (?,
+                (
+                    SELECT 
+                        tags.id
+                        FROM
+                        tags
+                    WHERE 
+                        tags.name=?
+                )
+            );
+            ";
+            $QtStatement=$this->db->prepare($questionsTagsQuery);
+            $QtStatement->execute([$questionId,$tag]);
+        }
     }
 
     private function listQuestions($limitQuery=null){
@@ -54,6 +93,10 @@ class CrudService implements CrudServiceInterface
 
         $questions = function () use ($stmt) {
             while ($question = $stmt->fetchObject(Question::class)){
+                /* @var $question Question*/
+                $tags=$this->listTagsByQuestionId($question->getId());
+                $question->setTags($tags);
+
                 yield $question;
             }
         };
@@ -82,6 +125,29 @@ class CrudService implements CrudServiceInterface
 
         $limitQuery="LIMIT {$page} , 5";
         return $this->listQuestions($limitQuery);
+    }
+
+    public function listTagsByQuestionId($questionId)
+    {
+        $tagsQuery="
+            SELECT 
+              tags.name
+            FROM
+              tags
+            INNER JOIN
+              questions_tags
+            ON
+              tags.id=questions_tags.tag_id
+            WHERE
+             questions_tags.question_id=?";
+        $stmt=$this->db->prepare($tagsQuery);
+        $stmt->execute([$questionId]);
+        $tags = function () use ($stmt) {
+            while ($tag = $stmt->fetchObject(Tag::class)){
+                yield $tag;
+            }
+        };
+        return $tags;
     }
 
     public function getMaxPage(): int

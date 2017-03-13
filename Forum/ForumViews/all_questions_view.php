@@ -1,6 +1,7 @@
 <?php /**
  * @var $data \ForumData\Questions\AllQuestions
  * @var $service \ForumServices\CrudServices\CrudService
+ * @var $tag \ForumData\Tags\Tag
  */ ?>
 <header class="intro-header" style="background-image: url('ForumStyles/img/home-bg.jpg')">
     <div class="container">
@@ -21,6 +22,9 @@
             <div class="question-and-answer-container">
             <p><?= htmlspecialchars($question->getUsername()) ?></p>
             <h3><a href="question.php?id=<?= $question->getId(); ?>"><?= $service->cutLongText(htmlspecialchars($question->getTitle()),150)?></a><div class="box"><iframe frameborder="0" class="page-hint" src="question.php?id=<?= $question->getId(); ?>"></iframe></div></h3>
+                <?php foreach ($question->getTags() as $tag):?>
+                    <a href="" class="forum-tag"><?=htmlspecialchars($tag->getName());?></a>
+                <?php endforeach;?>
             </div>
         <?php endforeach; ?>
     </div>
