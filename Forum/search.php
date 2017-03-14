@@ -18,9 +18,19 @@ WHERE body LIKE ?
              INNER JOIN
 				  questions
              ON questions.id = questions_tags.question_id
-             WHERE tags.name LIKE ?)');
+             WHERE tags.name LIKE ?)
+ OR title IN ( SELECT
+    title
+  FROM 
+    questions
+  INNER JOIN 
+    answers
+  ON
+    answers.question_id = questions.id
+  WHERE answers.body LIKE ?
+ )');
     $word = $_GET['term'];
-    $stmt->execute(["%$word%","%$word%","%$word%"]);
+    $stmt->execute(["%$word%","%$word%","%$word%","%$word%"]);
     while ($row = $stmt->fetch()){
         $result[] = $row['title'];
     }
