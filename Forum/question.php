@@ -17,7 +17,6 @@ if(isset($_GET['id'])){
 }
 elseif(isset($_POST['title'])) {
     $crudService = new \ForumServices\CrudServices\CrudService($db);
-    $questionDetails = null;
     $sessionService->setQuestionTitle($_POST['title']);
     $title = $sessionService->getQuestionTitle();
     $questionDetails = $crudService->listQuestionDetailsByTitle($title);
@@ -31,8 +30,6 @@ elseif(isset($_POST['answerQuestion'])){
     $crudService = new \ForumServices\CrudServices\CrudService($db);
     $id = $sessionService->getQuestionId();
     if (empty($_POST['body'])) {
-        $sessionService->unsetQuestionTitle();
-        $sessionService->unsetQuestionId();
         $sessionService->setMessage('Answer body cannot be empty.', 'error');
         $sessionService->redirect("question.php?id=$id");
     }
@@ -44,11 +41,5 @@ elseif(isset($_POST['answerQuestion'])){
 else{
     $sessionService->setMessage('Search a question or go to Questions in order to access this page.','error');
     $sessionService->redirect('all_questions.php');
-}
-if($sessionService->isQuestionIdSet()){
-    $sessionService->unsetQuestionId();
-}
-if($sessionService->isQuestionTitleSet()){
-    $sessionService->unsetQuestionTitle();
 }
 $viewsRenderer->renderView('question_view',$questionDetails);
