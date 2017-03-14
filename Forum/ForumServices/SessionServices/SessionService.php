@@ -35,6 +35,47 @@ class SessionService implements SessionServiceInterface
         return $_SESSION['username'];
     }
 
+    public function setQuestionId($id)
+    {
+        $_SESSION['question_id'] = $id;
+    }
+
+    public function getQuestionId()
+    {
+        return $_SESSION['question_id'];
+    }
+
+    public function isQuestionIdSet()
+    {
+        return isset($_SESSION['question_id']);
+    }
+
+    public function unsetQuestionId()
+    {
+        unset($_SESSION['question_id']);
+    }
+
+    public function setQuestionTitle($title)
+    {
+        $_SESSION['question_title'] = $title;
+    }
+
+    public function getQuestionTitle()
+    {
+        return $_SESSION['question_title'];
+    }
+
+    public function isQuestionTitleSet()
+    {
+        return isset($_SESSION['question_title']);
+    }
+
+    public function unsetQuestionTitle()
+    {
+        unset($_SESSION['question_title']);
+    }
+
+
 
     public function setMessage(string $infoMessage, string $messageType)
     {
