@@ -30,19 +30,24 @@
     </div>
 </div>
 <div class="container text-center">
+    <ul class="pagination">
+        <?php if($service->getCurrentPage()>1):?>
+            <li>
+                <a href="all_questions.php?page=<?=$service->getCurrentPage()-1?>">&laquo;</a>
+            </li>
+        <?php endif;?>
 
-    <?php if($service->getCurrentPage()>1):?>
-        <a href="all_questions.php?page=<?=$service->getCurrentPage()-1?>">Previous</a>
-    <?php endif;?>
+        <?php for($i=1; $i<=$service->getMaxPage(); $i++):?>
+            <li><a href="all_questions.php?page=<?=$i;?>" class="<?=($service->getCurrentPage()==$i)?'current-page':'page';?>"><?=$i?></a></li>
+        <?php endfor;?>
 
-    <?php for($i=1; $i<=$service->getMaxPage(); $i++):?>
-        <a href="all_questions.php?page=<?=$i;?>" class="<?=($service->getCurrentPage()==$i)?'current-page':'page';?>">[<?=$i?>]</a>
-    <?php endfor;?>
+        <?php if($service->getCurrentPage()<$service->getMaxPage()):?>
+            <li><a href="all_questions.php?page=<?=$service->getCurrentPage()+1?>">&raquo;</a></li>
+        <?php endif;?>
 
-    <?php if($service->getCurrentPage()<$service->getMaxPage()):?>
-        <a href="all_questions.php?page=<?=$service->getCurrentPage()+1?>">Next</a>
-    <?php endif;?>
-
+    </ul>
 </div>
+
+
 
 
