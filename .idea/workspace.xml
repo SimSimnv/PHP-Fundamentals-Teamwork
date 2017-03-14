@@ -28,19 +28,22 @@
       <file leaf-file-name="CrudService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2907">
+            <state relative-caret-position="17">
               <caret line="179" column="20" lean-forward="false" selection-start-line="179" selection-start-column="20" selection-end-line="179" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Forum/ForumStyles/js/search.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding />
+              <folding>
+                <marker date="1489513545139" expanded="true" signature="679:736" ph="INSERT INTO questions... " />
+                <marker date="1489513545139" expanded="true" signature="1336:1372" ph="INSERT INTO tags... " />
+                <marker date="1489513545139" expanded="true" signature="1525:1876" ph="INSERT INTO questions_tags" />
+                <marker date="1489513545139" expanded="true" signature="1684:1844" ph="SELECT tags.... tags" />
+                <marker date="1489513545139" expanded="true" signature="2165:2485" ph="SELECT quest... questions" />
+                <marker date="1489513545139" expanded="true" signature="3617:3855" ph="SELECT tags.... tags" />
+                <marker date="1489513545139" expanded="true" signature="4204:4234" ph="SELECT COUNT... questions" />
+                <marker date="1489513545139" expanded="true" signature="4610:4728" ph="INSERT INTO answers" />
+                <marker date="1489513545139" expanded="true" signature="5143:5225" ph="SELECT * FRO... answers" />
+                <marker date="1489513545139" expanded="true" signature="5266:5513" ph="SELECT q.id,... questions" />
+                <marker date="1489513545139" expanded="true" signature="6387:6469" ph="SELECT * FRO... answers" />
+                <marker date="1489513545139" expanded="true" signature="6510:6649" ph="SELECT id, t... questions" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,8 +51,18 @@
       <file leaf-file-name="question.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Forum/question.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+            <state relative-caret-position="680">
+              <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav_view.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Forum/ForumViews/SharedViews/nav_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="56" column="48" lean-forward="false" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -75,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Forum/search.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="646">
@@ -94,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/Forum/ForumViews/all_questions_view.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="799">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -176,14 +189,14 @@
         <option value="$PROJECT_DIR$/Forum/home.php" />
         <option value="$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudService.php" />
         <option value="$PROJECT_DIR$/Forum/ForumViews/SharedViews/footer_view.php" />
-        <option value="$PROJECT_DIR$/Forum/ForumViews/SharedViews/nav_view.php" />
         <option value="$PROJECT_DIR$/Forum/ForumStyles/js/search.js" />
         <option value="$PROJECT_DIR$/Forum/app.php" />
         <option value="$PROJECT_DIR$/Forum/ForumServices/SessionServices/SessionService.php" />
-        <option value="$PROJECT_DIR$/Forum/question.php" />
         <option value="$PROJECT_DIR$/Forum/ForumStyles/css/forum-custom-styles.css" />
         <option value="$PROJECT_DIR$/Forum/ForumViews/all_questions_view.php" />
         <option value="$PROJECT_DIR$/Forum/search.php" />
+        <option value="$PROJECT_DIR$/Forum/question.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumViews/SharedViews/nav_view.php" />
       </list>
     </option>
   </component>
@@ -704,7 +717,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31655000" />
+    <option name="totallyTimeSpent" value="31830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -971,14 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/SharedViews/nav_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="80" column="67" lean-forward="false" selection-start-line="80" selection-start-column="67" selection-end-line="80" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Forum/ForumStyles/js/jqBootstrapValidation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1024,14 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="179" column="20" lean-forward="false" selection-start-line="179" selection-start-column="20" selection-end-line="179" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Forum/ForumServices/SessionServices/SessionService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1173">
@@ -1048,14 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Forum/ForumViews/question_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1067,7 +1056,7 @@
     <entry file="file://$PROJECT_DIR$/Forum/ForumViews/all_questions_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1090,6 +1079,43 @@
             <marker date="1489513622707" expanded="true" signature="173:492" ph="SELECT quest... tags" />
             <marker date="1489513622707" expanded="true" signature="509:645" ph="SELECT title... questions" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="179" column="20" lean-forward="false" selection-start-line="179" selection-start-column="20" selection-end-line="179" selection-end-column="20" />
+          <folding>
+            <marker date="1489513545139" expanded="true" signature="679:736" ph="INSERT INTO questions... " />
+            <marker date="1489513545139" expanded="true" signature="1336:1372" ph="INSERT INTO tags... " />
+            <marker date="1489513545139" expanded="true" signature="1525:1876" ph="INSERT INTO questions_tags" />
+            <marker date="1489513545139" expanded="true" signature="1684:1844" ph="SELECT tags.... tags" />
+            <marker date="1489513545139" expanded="true" signature="2165:2485" ph="SELECT quest... questions" />
+            <marker date="1489513545139" expanded="true" signature="3617:3855" ph="SELECT tags.... tags" />
+            <marker date="1489513545139" expanded="true" signature="4204:4234" ph="SELECT COUNT... questions" />
+            <marker date="1489513545139" expanded="true" signature="4610:4728" ph="INSERT INTO answers" />
+            <marker date="1489513545139" expanded="true" signature="5143:5225" ph="SELECT * FRO... answers" />
+            <marker date="1489513545139" expanded="true" signature="5266:5513" ph="SELECT q.id,... questions" />
+            <marker date="1489513545139" expanded="true" signature="6387:6469" ph="SELECT * FRO... answers" />
+            <marker date="1489513545139" expanded="true" signature="6510:6649" ph="SELECT id, t... questions" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/SharedViews/nav_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="56" column="48" lean-forward="false" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
