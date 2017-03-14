@@ -207,7 +207,10 @@ class CrudService implements CrudServiceInterface
         $questionStmt=$this->db->prepare($questionQuery);
         $questionStmt->execute([$questionId]);
         $question=$questionStmt->fetchObject(Question::class);
-
+        if($question===false){
+            header("Location: all_questions.php");
+            exit;
+        }
 
         $stmt=$this->db->prepare($answersQuery);
         $stmt->execute([$questionId]);
