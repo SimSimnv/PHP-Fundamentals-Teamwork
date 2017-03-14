@@ -19,8 +19,9 @@ body div.answer-form{
     padding: 20px;
     font-size: 1.2em;
 }
-body div.container>a.current-page{
-    color: dodgerblue;
+body div.container .pagination li a.current-page{
+    background-color: #00a8c4;
+    color: #ffffff;
     font-weight: bold;
 }
 body div>a.forum-tag{
