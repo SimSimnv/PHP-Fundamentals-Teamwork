@@ -1,5 +1,9 @@
 <?php
 require_once 'app.php';
+if(basename($_SERVER['PHP_SELF']) === basename(__FILE__)){
+    $sessionService->setMessage('Cannot access this page.','error');
+    $sessionService->redirect('home.php');
+}
 $result = [];
 if(isset($_GET['term'])){
     $stmt = $db->prepare('

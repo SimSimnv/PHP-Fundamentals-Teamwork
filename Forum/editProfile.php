@@ -2,8 +2,8 @@
 include 'app.php';
 
 if($sessionService->isLogged() != true){
-    header("Location: home.php");
-    exit;
+    $sessionService->setMessage('Login in order to edit your profile.','error');
+    $sessionService->redirect('login.php');
 }
 $forumService=new \ForumServices\MainService\ForumService($db,$encryptionService,$sessionService);
 

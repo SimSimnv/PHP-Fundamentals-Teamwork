@@ -251,10 +251,10 @@ class CrudService implements CrudServiceInterface
             FROM
             questions 
             WHERE
-            title = ?";
+            title LIKE ?";
 
         $questionStmt=$this->db->prepare($questionQuery);
-        $questionStmt->execute([$title]);
+        $questionStmt->execute(["%$title%"]);
         /**
          * @var $question Question
          */

@@ -6,7 +6,10 @@ spl_autoload_register(function($class){
 });
 
 $sessionService=new \ForumServices\SessionServices\SessionService();
-
+if(basename($_SERVER['PHP_SELF']) === basename(__FILE__)){
+    $sessionService->setMessage('Cannot access this page.','error');
+    $sessionService->redirect('home.php');
+}
 set_exception_handler(function(\ForumCore\ForumException $e) use ($sessionService){
     $infoMessage=$e->getMessage();
     $sessionService->setMessage($infoMessage,'error');
