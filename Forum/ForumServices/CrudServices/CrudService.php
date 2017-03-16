@@ -11,15 +11,18 @@ use ForumData\Questions\QuestionAndAnswers;
 use ForumData\Tags\Tag;
 use ForumServices\CrudServices\CrudServiceInterface;
 use ForumAdapter\DatabaseInterface;
+use ForumServices\SessionServices\SessionService;
 
 class CrudService implements CrudServiceInterface
 {
     /* @var DatabaseInterface*/
     private $db;
+    private $sessionService;
 
-    public function __construct(DatabaseInterface $db)
+    public function __construct(DatabaseInterface $db, SessionService $sessionService = null)
     {
         $this->db=$db;
+        $this->sessionService = $sessionService;
     }
 
     public function askQuestion($title, $body, $userId, $tagsString=null)
@@ -208,8 +211,8 @@ class CrudService implements CrudServiceInterface
         $questionStmt->execute([$questionId]);
         $question=$questionStmt->fetchObject(Question::class);
         if($question===false){
-            header("Location: all_questions.php");
-            exit;
+            $this->sessionService->setMessage('Question request failed','error');
+            $this->sessionService->redirect('all_questions.php');
         }
 
         $stmt=$this->db->prepare($answersQuery);
@@ -286,6 +289,11 @@ class CrudService implements CrudServiceInterface
         if(strlen($string) > 100)
             return substr($string, 0, $length) . '...';
         return $string;
+    }
+
+    public function questionsCount()
+    {
+        return $this->db->lastInsertId();
     }
 
 }

@@ -2,7 +2,7 @@
 require_once 'app.php';
 $questionDetails = null;
 if(isset($_GET['id'])){
-    $crudService=new \ForumServices\CrudServices\CrudService($db);
+    $crudService=new \ForumServices\CrudServices\CrudService($db,$sessionService);
     $sessionService->setQuestionId($_GET['id']);
     $id = $sessionService->getQuestionId();
     if(isset($_POST['answerQuestion'])){
@@ -16,7 +16,7 @@ if(isset($_GET['id'])){
     $questionDetails=$crudService->listQuestionDetails($id);
 }
 elseif(isset($_POST['title'])) {
-    $crudService = new \ForumServices\CrudServices\CrudService($db);
+    $crudService = new \ForumServices\CrudServices\CrudService($db,$sessionService);
     $sessionService->setQuestionTitle($_POST['title']);
     $title = $sessionService->getQuestionTitle();
     $questionDetails = $crudService->listQuestionDetailsByTitle($title);
@@ -27,7 +27,7 @@ elseif(isset($_POST['title'])) {
     $sessionService->setQuestionId($questionDetails->getQuestion()->getId());
 }
 elseif(isset($_POST['answerQuestion'])){
-    $crudService = new \ForumServices\CrudServices\CrudService($db);
+    $crudService = new \ForumServices\CrudServices\CrudService($db,$sessionService);
     $id = $sessionService->getQuestionId();
     if (empty($_POST['body'])) {
         $sessionService->setMessage('Answer body cannot be empty.', 'error');
