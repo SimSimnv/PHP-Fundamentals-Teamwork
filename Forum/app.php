@@ -1,16 +1,16 @@
 <?php
+
 session_start();
 
-spl_autoload_register(function($class){
-    include $class.'.php';
+spl_autoload_register(function($class) {
+    $class = str_replace("\\", "/", $class);
+    require_once $class . '.php';
+        //include $class.'.php';
 });
 
-$sessionService=new \ForumServices\SessionServices\SessionService();
-if(basename($_SERVER['PHP_SELF']) === basename(__FILE__)){
-    $sessionService->setMessage('Cannot access this page.','error');
-    $sessionService->redirect('home.php');
-}
+$sessionService = new \ForumServices\SessionServices\SessionService();
 set_exception_handler(function(\ForumCore\ForumException $e) use ($sessionService){
+
     $infoMessage=$e->getMessage();
     $sessionService->setMessage($infoMessage,'error');
 
@@ -19,7 +19,6 @@ set_exception_handler(function(\ForumCore\ForumException $e) use ($sessionServic
     exit;
 });
 
-
 $db= new \ForumAdapter\PDODatabase(
     \ForumConfig\DBConfig::DB_HOST,
     \ForumConfig\DBConfig::DB_NAME,
@@ -27,5 +26,6 @@ $db= new \ForumAdapter\PDODatabase(
     \ForumConfig\DBConfig::DB_PASS
 );
 
-$encryptionService=new \ForumServices\EncryptionServices\EncryptionService();
-$viewsRenderer=new \ForumCore\ViewsRenderer($sessionService);
+$encryptionService = new \ForumServices\EncryptionServices\EncryptionService();
+$viewsRenderer = new \ForumData\ForumCore\ViewsRenderer($sessionService);
+ 
