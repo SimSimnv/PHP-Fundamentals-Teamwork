@@ -26,5 +26,5 @@ $db= new \ForumAdapter\PDODatabase(
 );
 
 $encryptionService = new \ForumServices\EncryptionServices\EncryptionService();
-$viewsRenderer = new \ForumData\ForumCore\ViewsRenderer($sessionService);
+$viewsRenderer = new \ForumCore\ViewsRenderer($sessionService);
  
