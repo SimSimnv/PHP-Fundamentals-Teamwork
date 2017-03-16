@@ -2,10 +2,6 @@
 
 session_start();
 
-if(basename($_SERVER['PHP_SELF']) === basename(__FILE__)){
-    $sessionService->setMessage('Cannot access this page.','error');
-    $sessionService->redirect('home.php');
-}
 
 spl_autoload_register(function($class) {
     $class = str_replace("\\", "/", $class);
@@ -13,6 +9,12 @@ spl_autoload_register(function($class) {
 });
 
 $sessionService = new \ForumServices\SessionServices\SessionService();
+
+if(basename($_SERVER['PHP_SELF']) === basename(__FILE__)){
+    $sessionService->setMessage('Cannot access this page.','error');
+    $sessionService->redirect('home.php');
+}
+
 set_exception_handler(function(\ForumCore\ForumException $e) use ($sessionService){
 
     $infoMessage=$e->getMessage();
