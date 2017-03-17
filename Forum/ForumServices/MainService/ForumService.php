@@ -119,10 +119,6 @@ class ForumService implements ForumServiceInterface
 
     public function changePassword (int $id, string $newPassword, string $confirm)
     {
-        // check for new password match
-        if($newPassword!=$confirm){
-            throw new ForumException("Passwords don't match!");
-        }
 
         $hashNewPassword=$this->encryptionService->encrypt($newPassword);
 

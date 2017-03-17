@@ -29,6 +29,11 @@ if(isset($_POST['changePassword'])
     $newPassword = $_POST['newpassword'];
     $confirm = $_POST['confirm'];
 
+    if($newPassword !== $confirm){
+        $sessionService->setMessage('Passwords mismatch.','error');
+        $sessionService->redirect('editProfile.php');
+    }
+
     $forumService->changePassword($userId, $newPassword, $confirm);
     $sessionService->setMessage('Password change successful.','info');
 }

@@ -24,7 +24,7 @@
             <h3><a href="question.php?id=<?= $question->getId(); ?>"><?= $service->cutLongText(htmlspecialchars($question->getTitle()),150)?></a></h3>
             <p>Views: <?=$question->getViews();?></p>
                 <?php foreach ($question->getTags() as $tag):?>
-                    <a href="" class="forum-tag"><?=htmlspecialchars($tag->getName());?></a>
+                    <span href="" class="forum-tag"><?=htmlspecialchars($tag->getName());?></span>
                 <?php endforeach;?>
             </div>
         <?php endforeach; ?>

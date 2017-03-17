@@ -24,15 +24,16 @@ body div.container .pagination li a.current-page{
     color: #ffffff;
     font-weight: bold;
 }
-body div>a.forum-tag{
+body div>span.forum-tag{
     background-color: rgba(211, 178, 89, 0.69);
     color: #ffffff;
     border-radius: 10px;
     text-decoration: none;
     font-size: 0.9em;
     padding: 2px;
+    cursor: pointer;
 }
-body div>a.forum-tag:hover{
+body div>span.forum-tag:hover{
     background-color: rgba(175, 145, 77, 0.98);
 }
 .ui-helper-hidden-accessible{
