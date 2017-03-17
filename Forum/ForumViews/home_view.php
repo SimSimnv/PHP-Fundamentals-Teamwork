@@ -30,7 +30,7 @@
     </li>
 </ul>
 <?php else: ?>
-    <h1 style="text-align: center">Greetings <?=$sessionService->getUserName();?></h1>
+    <h1 style="text-align: center">Greetings <?=htmlspecialchars($sessionService->getUserName());?></h1>
         <ul class="pager">
                <li>
                    <a href="all_questions.php" style="padding: 40px;">To the questions</a>
