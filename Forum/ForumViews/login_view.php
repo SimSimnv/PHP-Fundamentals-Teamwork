@@ -8,7 +8,7 @@
                 <div class="site-heading">
                     <h1>Welcome to Enywas Forum</h1>
                     <hr class="small">
-                    <span class="subheading">Login</span>
+                    <span class="subheading">Log in</span>
                 </div>
             </div>
         </div>
