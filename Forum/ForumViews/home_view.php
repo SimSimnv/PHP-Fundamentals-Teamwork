@@ -31,5 +31,14 @@
 </ul>
 <?php else: ?>
     <h1 style="text-align: center">Greetings <?=$sessionService->getUserName();?></h1>
+    <ul class="pager">
+        <li>
+            <a href="all_questions.php" style="padding: 40px;">To the questions</a>
+        </li>
+        &nbsp; 	&nbsp;
+        <li>
+            <a href="ask_question.php" style="padding: 40px;">Ask a question</a>
+        </li>
+    </ul>
 <?php endif; ?>
 <hr>
