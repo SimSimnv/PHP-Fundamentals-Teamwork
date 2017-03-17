@@ -192,7 +192,9 @@ class CrudService implements CrudServiceInterface
         FROM
         answers
         WHERE
-        question_id=?";
+        question_id=?
+        ORDER BY id DESC
+        ";
 
         $questionQuery="
             SELECT 
