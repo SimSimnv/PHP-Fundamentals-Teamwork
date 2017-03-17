@@ -22,7 +22,7 @@
 <?php if(!$sessionService->isLogged()):?>
 <ul class="pager">
     <li>
-        <a href="register.php" style="padding: 40px;">NEw to the site? <br> Register</a>
+        <a href="register.php" style="padding: 40px;">New to the site? <br> Register</a>
     </li>
     &nbsp; 	&nbsp;
     <li>
