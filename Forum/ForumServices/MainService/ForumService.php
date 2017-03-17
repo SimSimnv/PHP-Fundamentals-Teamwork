@@ -33,7 +33,9 @@ class ForumService implements ForumServiceInterface
         if($password!=$confirm){
             throw new ForumException("Passwords mismatch!");
         }
-
+        if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+            throw new ForumException("Invalid email!");
+        }
         $hashPassword=$this->encryptionService->encrypt($password);
 
         $registerQuery="
@@ -88,6 +90,9 @@ class ForumService implements ForumServiceInterface
     public function editProfile (int $id, string $username, string $email)
    {
 
+       if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+           throw new ForumException("Invalid email!");
+       }
         //update user details
         $updateQuery="UPDATE
                         `users`
