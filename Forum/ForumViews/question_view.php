@@ -78,8 +78,8 @@
             <?php endif; ?>
             <?php foreach ($data->getAllAnswers() as $answer) : ?>
                 <div style="background: #f7ecb5;">
-                    <p><?= htmlspecialchars($answer->getAuthor() == null ? 'Anonymous' : $answer->getAuthor()); ?></p>
-                    <h2><?= htmlspecialchars($answer->getBody()); ?></h2>
+                    <h2><?= htmlspecialchars($answer->getAuthor() == null ? 'Anonymous' : $answer->getAuthor()); ?></h2>
+                    <p><?= htmlspecialchars($answer->getBody()); ?></p>
                 </div>
             <?php endforeach; ?>
         </div>

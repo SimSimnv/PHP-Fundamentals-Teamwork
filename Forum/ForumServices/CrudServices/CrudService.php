@@ -77,7 +77,8 @@ class CrudService implements CrudServiceInterface
             questions.title, 
             questions.body,
             questions.user_id,
-            users.username
+            users.username,
+            questions.views
           FROM 
             questions
           INNER JOIN 
@@ -229,6 +230,8 @@ class CrudService implements CrudServiceInterface
         $allAnswers->setAllAnswers($answers);
         $allAnswers->setQuestion($question);
 
+        $this->increaseQuestionViews($questionId);
+
         return $allAnswers;
 
     }
@@ -280,6 +283,8 @@ class CrudService implements CrudServiceInterface
         $allAnswers->setAllAnswers($answers);
         $allAnswers->setQuestion($question);
 
+        $this->increaseQuestionViews($id);
+
         return $allAnswers;
 
     }
@@ -294,6 +299,13 @@ class CrudService implements CrudServiceInterface
     public function questionsCount()
     {
         return $this->db->lastInsertId();
+    }
+
+    private function increaseQuestionViews($questionId)
+    {
+        $query="UPDATE questions SET views=views+1 WHERE id=?";
+        $stmt=$this->db->prepare($query);
+        $stmt->execute([$questionId]);
     }
 
 }

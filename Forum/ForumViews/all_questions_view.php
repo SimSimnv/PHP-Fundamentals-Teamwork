@@ -21,7 +21,8 @@
         <?php foreach ($data->getQuestions() as $question) : ?>
             <div class="question-and-answer-container">
             <p><?= htmlspecialchars($question->getUsername()) ?></p>
-            <h3><a href="question.php?id=<?= $question->getId(); ?>"><?= $service->cutLongText(htmlspecialchars($question->getTitle()),150)?></a><div class="box"><iframe frameborder="0" class="page-hint" src="question.php?id=<?= $question->getId(); ?>"></iframe></div></h3>
+            <h3><a href="question.php?id=<?= $question->getId(); ?>"><?= $service->cutLongText(htmlspecialchars($question->getTitle()),150)?></a></h3>
+            <p>Views: <?=$question->getViews();?></p>
                 <?php foreach ($question->getTags() as $tag):?>
                     <a href="" class="forum-tag"><?=htmlspecialchars($tag->getName());?></a>
                 <?php endforeach;?>
@@ -47,7 +48,4 @@
 
     </ul>
 </div>
-
-
-
 

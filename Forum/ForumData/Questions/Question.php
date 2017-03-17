@@ -13,7 +13,7 @@ class Question
     private $body;
     private $username;
     private $tags;
-
+    private $views;
 
     public function getTags()
     {
@@ -70,6 +70,22 @@ class Question
     public function setUsername($username)
     {
         $this->username = $username;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getViews()
+    {
+        return $this->views;
+    }
+
+    /**
+     * @param mixed $views
+     */
+    public function setViews($views)
+    {
+        $this->views = $views;
     }
 
 
