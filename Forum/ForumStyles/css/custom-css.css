@@ -35,3 +35,19 @@ body div>a.forum-tag{
 body div>a.forum-tag:hover{
     background-color: rgba(175, 145, 77, 0.98);
 }
+.ui-helper-hidden-accessible{
+    color: #ffffff;
+}
+.ui-autocomplete{
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid black;
+}
+.ui-autocomplete .ui-menu-item{
+    background-color: #f7ecb5;
+    cursor: pointer;
+}
+.ui-menu-item a{
+    text-decoration: none;
+    width: 100%;
+}

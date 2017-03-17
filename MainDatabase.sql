@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `answers` (
   CONSTRAINT `FK__questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table enywas.answers: ~14 rows (approximately)
+-- Dumping data for table enywas.answers: ~15 rows (approximately)
 /*!40000 ALTER TABLE `answers` DISABLE KEYS */;
 INSERT INTO `answers` (`id`, `author`, `email`, `body`, `question_id`) VALUES
 	(16, 'Ivan', 'ivan@mail.com', 'Yes, that is correct', 22),
@@ -63,10 +63,9 @@ CREATE TABLE IF NOT EXISTS `questions` (
   CONSTRAINT `FK_questions_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table enywas.questions: ~12 rows (approximately)
+-- Dumping data for table enywas.questions: ~11 rows (approximately)
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
 INSERT INTO `questions` (`id`, `title`, `body`, `user_id`, `views`) VALUES
-	(4, 'Her debut album The Fame (2008) was a critical and commercial success that produced international chart-topping singles such as "Just Dance" and "Poker Face". A follow-up EP, The Fame Monster (2009), was met with a similar reception and "Bad Romance", "Te', 'Her debut album The Fame (2008) was a critical and commercial success that produced international chart-topping singles such as "Just Dance" and "Poker Face". A follow-up EP, The Fame Monster (2009), was met with a similar reception and "Bad Romance", "Telephone", and "Alejandro" were released, becoming successful singles. Her second full-length album Born This Way was released in 2011, topping the charts in more than 20 countries, including the United States, where it sold over one million copies in its first week. The album produced the number-one single "Born This Way". Her third album Artpop, released in 2013, topped the US charts and included the successful single "Applause". In 2014, Gaga released a collaborative jazz album with Tony Bennett titled Cheek to Cheek, which became her third consecutive number one in the United States. For her work in the television series American Horror Story: Hotel, Gaga won a Golden Globe Award in 2016. With her fifth studio album Joanne (2016), she became the first woman to have four US number one albums in the 2010s. In February 2017, Gaga headlined the Super Bowl LI halftime show which had a total audience of over 150 million across various platforms worldwide, making it the most viewed musical event in history.', 6, 2),
 	(22, 'Question about PHP', 'PHP is a server-side scripting language designed primarily for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994, the PHP reference implementation is now produced by The PHP Development Team. PHP originally stood for Personal Home Page, but it now stands for the recursive acronym PHP: Hypertext Preprocessor. Is that correct?', 3, 3),
 	(23, 'Hawaii', 'The state encompasses nearly the entire volcanic Hawaiian archipelago, which comprises hundreds of islands spread over 1,500 miles (2,400 km). At the southeastern end of the archipelago, the eight main islands are—in order from northwest to southeast: Niʻihau, Kauaʻi, Oʻahu, Molokaʻi, Lānaʻi, Kahoʻolawe, Maui, and the Island of Hawaiʻi. The last is the largest island in the group; it is often called the "Big Island" or "Hawaiʻi Island" to avoid confusion with the state or archipelago. The archipelago is physiographically and ethnologically part of the Polynesian subregion of Oceania. Is that true?', 3, 1),
 	(24, 'How do i write my CV?', 'Please help i need to write my cv.', 4, 13),
@@ -91,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `questions_tags` (
   CONSTRAINT `FK_questions_tags_questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table enywas.questions_tags: ~21 rows (approximately)
+-- Dumping data for table enywas.questions_tags: ~19 rows (approximately)
 /*!40000 ALTER TABLE `questions_tags` DISABLE KEYS */;
 INSERT INTO `questions_tags` (`question_id`, `tag_id`) VALUES
 	(22, 27),
