@@ -85,15 +85,16 @@ class CrudService implements CrudServiceInterface
             users
           ON 
             questions.user_id = users.id
+          WHERE deleted_on IS NULL
           ORDER BY questions.id DESC
          ";
 
         if($limitQuery!==null){
             $questionsQuery.=$limitQuery;
         }
+
         $stmt = $this->db->prepare($questionsQuery);
         $stmt->execute();
-
 
         $questions = function () use ($stmt) {
             while ($question = $stmt->fetchObject(Question::class)){
@@ -156,7 +157,7 @@ class CrudService implements CrudServiceInterface
 
     public function getMaxPage(): int
     {
-        $stmt=$this->db->prepare("SELECT COUNT(*) FROM questions");
+        $stmt=$this->db->prepare("SELECT COUNT(*) FROM questions WHERE deleted_on IS NULL");
         $stmt->execute();
         $totalEntries=$stmt->fetch()['COUNT(*)'];
         return ceil($totalEntries/5);
@@ -323,7 +324,7 @@ class CrudService implements CrudServiceInterface
 
     public function deleteQuestion($id)
     {
-        $query = 'DELETE FROM questions WHERE id = ?';
+        $query = 'UPDATE questions SET deleted_on=NOW() WHERE id = ?;';
         $stmt = $this->db->prepare($query);
         $stmt->execute([$id]);
     }
