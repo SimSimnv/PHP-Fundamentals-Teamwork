@@ -5,7 +5,7 @@ if(isset($_GET['term'])){
     $stmt = $db->prepare('
 SELECT * FROM 
 questions 
-WHERE body LIKE ?
+WHERE deleted_on IS NULL AND (body LIKE ?
  OR title LIKE ?
  OR title IN (	SELECT  
               questions.title
@@ -28,7 +28,7 @@ WHERE body LIKE ?
   ON
     answers.question_id = questions.id
   WHERE answers.body LIKE ?
- )');
+ ))');
     $word = $_GET['term'];
     $stmt->execute(["%$word%","%$word%","%$word%","%$word%"]);
     while ($row = $stmt->fetch()){
