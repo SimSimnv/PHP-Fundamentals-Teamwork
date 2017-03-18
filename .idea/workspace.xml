@@ -15,31 +15,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Forum/app.php">
+      <file leaf-file-name="admin_panel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Forum/admin_panel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="52">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Forum/home.php">
+      <file leaf-file-name="admin_panel_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Forum/ForumViews/admin_panel_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="question.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Forum/question.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="26" column="102" lean-forward="false" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -48,86 +38,109 @@
       <file leaf-file-name="CrudService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="182" column="33" lean-forward="false" selection-start-line="182" selection-start-column="33" selection-end-line="182" selection-end-column="33" />
+            <state relative-caret-position="837">
+              <caret line="327" column="30" lean-forward="false" selection-start-line="327" selection-start-column="30" selection-end-line="327" selection-end-column="30" />
               <folding>
-                <element signature="e#46#75#0#PHP" expanded="true" />
-                <marker date="1489693443135" expanded="true" signature="846:903" ph="INSERT INTO questions... " />
-                <marker date="1489693443135" expanded="true" signature="1503:1539" ph="INSERT INTO tags... " />
-                <marker date="1489693443135" expanded="true" signature="1692:2043" ph="INSERT INTO questions_tags" />
-                <marker date="1489693443135" expanded="true" signature="1851:2011" ph="SELECT tags.... tags" />
-                <marker date="1489693443135" expanded="true" signature="2332:2652" ph="SELECT quest... questions" />
-                <marker date="1489693443135" expanded="true" signature="3784:4022" ph="SELECT tags.... tags" />
-                <marker date="1489693443135" expanded="true" signature="4371:4401" ph="SELECT COUNT... questions" />
-                <marker date="1489693443135" expanded="true" signature="4777:4895" ph="INSERT INTO answers" />
-                <marker date="1489693443135" expanded="true" signature="5310:5392" ph="SELECT * FRO... answers" />
-                <marker date="1489693443135" expanded="true" signature="5433:5680" ph="SELECT q.id,... questions" />
-                <marker date="1489693443135" expanded="true" signature="6742:6824" ph="SELECT * FRO... answers" />
-                <marker date="1489693443135" expanded="true" signature="6865:7007" ph="SELECT id, t... questions" />
+                <element signature="e#555#728#0#PHP" expanded="false" />
+                <element signature="e#734#1067#0#PHP" expanded="false" />
+                <element signature="e#2247#3324#0#PHP" expanded="false" />
+                <element signature="e#3330#3415#0#PHP" expanded="false" />
+                <element signature="e#3421#3763#0#PHP" expanded="false" />
+                <element signature="e#3769#4365#0#PHP" expanded="false" />
+                <element signature="e#4371#4598#0#PHP" expanded="false" />
+                <element signature="e#4604#4708#0#PHP" expanded="false" />
+                <element signature="e#4714#5189#0#PHP" expanded="false" />
+                <element signature="e#5195#6841#0#PHP" expanded="false" />
+                <element signature="e#6847#8175#0#PHP" expanded="false" />
+                <element signature="e#8181#8369#0#PHP" expanded="false" />
+                <element signature="e#8375#8461#0#PHP" expanded="false" />
+                <element signature="e#8467#8675#0#PHP" expanded="false" />
+                <marker date="1489825487212" expanded="true" signature="846:903" ph="INSERT INTO questions... " />
+                <marker date="1489825487212" expanded="true" signature="1503:1539" ph="INSERT INTO tags... " />
+                <marker date="1489825487212" expanded="true" signature="1503:1577" ph="INSERT INTO tags... " />
+                <marker date="1489825487212" expanded="true" signature="1743:2088" ph="INSERT INTO questions_tags" />
+                <marker date="1489825487212" expanded="true" signature="1896:2056" ph="SELECT tags.... tags" />
+                <marker date="1489825487212" expanded="true" signature="2377:2726" ph="SELECT quest... questions" />
+                <marker date="1489825487212" expanded="true" signature="3858:4096" ph="SELECT tags.... tags" />
+                <marker date="1489825487212" expanded="true" signature="4445:4475" ph="SELECT COUNT... questions" />
+                <marker date="1489825487212" expanded="true" signature="4852:4970" ph="INSERT INTO answers" />
+                <marker date="1489825487212" expanded="true" signature="5385:5492" ph="SELECT * FRO... answers" />
+                <marker date="1489825487212" expanded="true" signature="5542:5789" ph="SELECT q.id,... questions" />
+                <marker date="1489825487212" expanded="true" signature="7039:7121" ph="SELECT * FRO... answers" />
+                <marker date="1489825487212" expanded="true" signature="7162:7304" ph="SELECT id, t... questions" />
+                <marker date="1489825487212" expanded="true" signature="8541:8586" ph="UPDATE quest... " />
+                <marker date="1489825487212" expanded="true" signature="8754:8807" ph="UPDATE quest... " />
+                <marker date="1489825487212" expanded="true" signature="8970:9004" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseInterface.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Forum/ForumAdapter/DatabaseInterface.php">
+      <file leaf-file-name="CrudServiceInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudServiceInterface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="544">
+              <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Forum/search.php">
+      <file leaf-file-name="edit_page.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Forum/edit_page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-              <folding>
-                <marker date="1489692834423" expanded="true" signature="97:648" ph="SELECT * FRO... questions" />
-                <marker date="1489692834423" expanded="true" signature="173:492" ph="SELECT quest... tags" />
-                <marker date="1489692834423" expanded="true" signature="509:645" ph="SELECT title... questions" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Forum/ForumStyles/js/search.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="567">
+              <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editProfile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Forum/editProfile.php">
+      <file leaf-file-name="nav_view.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Forum/ForumViews/SharedViews/nav_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="69" lean-forward="false" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
+            <state relative-caret-position="583">
+              <caret line="89" column="61" lean-forward="false" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="all_questions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Forum/all_questions.php">
+      <file leaf-file-name="ask_question_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Forum/ForumViews/ask_question_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="62" lean-forward="false" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Forum/index.php">
+      <file leaf-file-name="edit_page_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Forum/ForumViews/edit_page_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete_page_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Forum/ForumViews/delete_page_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="559">
+              <caret line="55" column="98" lean-forward="false" selection-start-line="55" selection-start-column="98" selection-end-line="55" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete_page.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Forum/delete_page.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -155,13 +168,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Config/config.php" />
         <option value="$PROJECT_DIR$/Forum/ForumViews/SharedViews/header_view.php" />
         <option value="$PROJECT_DIR$/Forum/ForumCore/HeaderController.php" />
         <option value="$PROJECT_DIR$/Forum/ForumViews/login_view.php" />
         <option value="$PROJECT_DIR$/Forum/ForumViews/create_topic_view.php" />
         <option value="$PROJECT_DIR$/all_questions.php" />
-        <option value="$PROJECT_DIR$/Forum/ForumData/Questions/Question.php" />
         <option value="$PROJECT_DIR$/Forum/ForumViews/ask_question_view.php" />
         <option value="$PROJECT_DIR$/Forum/ForumStyles/less/clean-blog.less" />
         <option value="$PROJECT_DIR$/Forum/details_page.php" />
@@ -172,32 +183,42 @@
         <option value="$PROJECT_DIR$/Forum/ForumAdapter/DatabaseStatementInterface.php" />
         <option value="$PROJECT_DIR$/Forum/ForumAdapter/PDOStatement.php" />
         <option value="$PROJECT_DIR$/Forum/ForumViews/details_page_view.php" />
-        <option value="$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudServiceInterface.php" />
         <option value="$PROJECT_DIR$/Forum/ForumData/Questions/QuestionAndAnswers.php" />
-        <option value="$PROJECT_DIR$/Forum/ForumServices/SessionServices/SessionServiceInterface.php" />
-        <option value="$PROJECT_DIR$/Forum/ForumServices/MainService/ForumService.php" />
-        <option value="$PROJECT_DIR$/Forum/ForumStyles/css/custom-css.css" />
         <option value="$PROJECT_DIR$/Forum/ForumViews/question_view.php" />
         <option value="$PROJECT_DIR$/Forum/ForumStyles/js/custom-js.js" />
-        <option value="$PROJECT_DIR$/Forum/logout.php" />
         <option value="$PROJECT_DIR$/Forum/login.php" />
         <option value="$PROJECT_DIR$/Forum/register.php" />
         <option value="$PROJECT_DIR$/Forum/ForumData/SearchBox/SearchBox.php" />
         <option value="$PROJECT_DIR$/Forum/home.php" />
         <option value="$PROJECT_DIR$/Forum/ForumViews/SharedViews/footer_view.php" />
-        <option value="$PROJECT_DIR$/Forum/ForumServices/SessionServices/SessionService.php" />
-        <option value="$PROJECT_DIR$/Forum/ForumStyles/css/forum-custom-styles.css" />
         <option value="$PROJECT_DIR$/Forum/ForumViews/all_questions_view.php" />
-        <option value="$PROJECT_DIR$/Forum/ForumViews/SharedViews/nav_view.php" />
         <option value="$PROJECT_DIR$/Forum/ForumStyles/js/search.js" />
-        <option value="$PROJECT_DIR$/Forum/ask_question.php" />
         <option value="$PROJECT_DIR$/Forum/editProfile.php" />
         <option value="$PROJECT_DIR$/Forum/index.php" />
-        <option value="$PROJECT_DIR$/Forum/app.php" />
         <option value="$PROJECT_DIR$/Forum/search.php" />
-        <option value="$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudService.php" />
         <option value="$PROJECT_DIR$/Forum/all_questions.php" />
         <option value="$PROJECT_DIR$/Forum/question.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumViews/administration_login_view.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumServices/SessionServices/SessionServiceInterface.php" />
+        <option value="$PROJECT_DIR$/Forum/administration.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumServices/MainService/ForumService.php" />
+        <option value="$PROJECT_DIR$/Forum/logout.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumServices/SessionServices/SessionService.php" />
+        <option value="$PROJECT_DIR$/Forum/admin_logout.php" />
+        <option value="$PROJECT_DIR$/Forum/app.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumStyles/css/forum-custom-styles.css" />
+        <option value="$PROJECT_DIR$/Forum/ForumStyles/css/custom-css.css" />
+        <option value="$PROJECT_DIR$/Forum/ForumData/Questions/Question.php" />
+        <option value="$PROJECT_DIR$/Forum/ask_question.php" />
+        <option value="$PROJECT_DIR$/Forum/admin_panel.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumViews/admin_panel_view.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumViews/edit_page_view.php" />
+        <option value="$PROJECT_DIR$/Forum/edit_page.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudServiceInterface.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudService.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumViews/delete_page_view.php" />
+        <option value="$PROJECT_DIR$/Forum/delete_page.php" />
+        <option value="$PROJECT_DIR$/Forum/ForumViews/SharedViews/nav_view.php" />
       </list>
     </option>
   </component>
@@ -222,7 +243,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
+    <option name="width" value="1932" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -240,7 +261,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -321,117 +341,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ForumStyles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumStyles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumStyles" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="ForumServices" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SessionServices" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumServices" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainService" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumServices" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EncryptionServices" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,146 +367,9 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumData" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Users" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumData" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumData" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Questions" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumData" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Answers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumCore" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumConfig" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PHP-Fundamentals-Teamwork" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Forum" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ForumAdapter" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -716,17 +489,18 @@
       <workItem from="1489513596124" duration="28000" />
       <workItem from="1489573382141" duration="1317000" />
       <workItem from="1489692566544" duration="901000" />
+      <workItem from="1489816297088" duration="9458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34048000" />
+    <option name="totallyTimeSpent" value="43506000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22552083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20146137" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -754,139 +528,16 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/login_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/register_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/EncryptionServices/EncryptionService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumStyles/less/clean-blog.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/ask_question_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumData/Answers/AllAnswers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/details_page.php" />
-    <entry file="file://$PROJECT_DIR$/Forum/ForumData/Answers/Answer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/details_page_view.php" />
-    <entry file="file://$PROJECT_DIR$/Forum/ForumData/Questions/QuestionAndAnswers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="54" column="63" lean-forward="false" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudServiceInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="67" lean-forward="false" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumConfig/DBConfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumAdapter/PDOStatement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="39" lean-forward="false" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumAdapter/PDODatabase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/SessionServices/SessionServiceInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumCore/ForumException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/SessionServices/Message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumStyles/css/custom-css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Forum/ForumStyles/css/jquery-ui.css" />
     <entry file="file://$PROJECT_DIR$/Forum/question.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumCore/ViewsRenderer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -908,25 +559,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumData/Questions/Question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="977">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Forum/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="56" lean-forward="false" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/MainService/ForumService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -958,29 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumStyles/css/forum-custom-styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/question_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/all_questions_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Forum/ForumViews/SharedViews/footer_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
@@ -989,58 +602,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/SharedViews/nav_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="48" lean-forward="false" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/basic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="144" column="9" lean-forward="false" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/SessionServices/SessionService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1768">
-          <caret line="104" column="20" lean-forward="false" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/ask_question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/editProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="69" lean-forward="false" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1063,7 +628,7 @@
     <entry file="file://$PROJECT_DIR$/Forum/ForumStyles/js/search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1071,12 +636,8 @@
     <entry file="file://$PROJECT_DIR$/Forum/search.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding>
-            <marker date="1489692834423" expanded="true" signature="97:648" ph="SELECT * FRO... questions" />
-            <marker date="1489692834423" expanded="true" signature="173:492" ph="SELECT quest... tags" />
-            <marker date="1489692834423" expanded="true" signature="509:645" ph="SELECT title... questions" />
-          </folding>
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,48 +649,334 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/app.php">
+    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/login_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/Core_c.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="253" column="6" lean-forward="false" selection-start-line="253" selection-start-column="6" selection-end-line="253" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumCore/ForumException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/SessionServices/SessionServiceInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/MainService/ForumService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="109" column="9" lean-forward="true" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+          <folding>
+            <element signature="e#47#82#0#PHP" expanded="true" />
+            <marker date="1489818742470" expanded="true" signature="1303:1586" ph="INSERT INTO users" />
+            <marker date="1489818742470" expanded="true" signature="2186:2241" ph="SELECT id,pa... users" />
+            <marker date="1489818742470" expanded="true" signature="3143:3198" ph="SELECT id,pa... users" />
+            <marker date="1489818742470" expanded="true" signature="4063:4256" ph="UPDATE `user... " />
+            <marker date="1489818742470" expanded="true" signature="4968:5124" ph="UPDATE `user... " />
+            <marker date="1489818742470" expanded="true" signature="5432:5462" ph="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/administration_login_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumCore/ViewsRenderer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/editProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="69" lean-forward="false" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Forum/all_questions.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="72" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/question_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumStyles/css/custom-css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumStyles/css/forum-custom-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/SessionServices/SessionService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="126" column="20" lean-forward="false" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
+          <folding>
+            <element signature="e#269#383#0#PHP" expanded="false" />
+            <element signature="e#389#476#0#PHP" expanded="false" />
+            <element signature="e#482#648#0#PHP" expanded="false" />
+            <element signature="e#753#879#0#PHP" expanded="false" />
+            <element signature="e#885#1066#0#PHP" expanded="false" />
+            <element signature="e#1072#1256#0#PHP" expanded="false" />
+            <element signature="e#1262#1348#0#PHP" expanded="false" />
+            <element signature="e#1354#1438#0#PHP" expanded="false" />
+            <element signature="e#1444#1537#0#PHP" expanded="false" />
+            <element signature="e#1543#1629#0#PHP" expanded="false" />
+            <element signature="e#1635#1733#0#PHP" expanded="false" />
+            <element signature="e#1739#1829#0#PHP" expanded="false" />
+            <element signature="e#1835#1934#0#PHP" expanded="false" />
+            <element signature="e#1940#2032#0#PHP" expanded="false" />
+            <element signature="e#2038#2370#0#PHP" expanded="false" />
+            <element signature="e#2376#2596#0#PHP" expanded="false" />
+            <element signature="e#2602#2726#0#PHP" expanded="false" />
+            <element signature="e#2732#2825#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/all_questions_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumData/Questions/QuestionAndAnswers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumData/Tags/Tag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumData/Questions/Question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/admin_logout.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="62" lean-forward="false" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/administration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="e#31#204#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ask_question.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="78" lean-forward="true" selection-start-line="6" selection-start-column="78" selection-end-line="6" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/admin_panel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/admin_panel_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="102" lean-forward="false" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/edit_page_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/ask_question_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudServiceInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="182" column="33" lean-forward="false" selection-start-line="182" selection-start-column="33" selection-end-line="182" selection-end-column="33" />
+        <state relative-caret-position="837">
+          <caret line="327" column="30" lean-forward="false" selection-start-line="327" selection-start-column="30" selection-end-line="327" selection-end-column="30" />
           <folding>
-            <element signature="e#46#75#0#PHP" expanded="true" />
-            <marker date="1489693443135" expanded="true" signature="846:903" ph="INSERT INTO questions... " />
-            <marker date="1489693443135" expanded="true" signature="1503:1539" ph="INSERT INTO tags... " />
-            <marker date="1489693443135" expanded="true" signature="1692:2043" ph="INSERT INTO questions_tags" />
-            <marker date="1489693443135" expanded="true" signature="1851:2011" ph="SELECT tags.... tags" />
-            <marker date="1489693443135" expanded="true" signature="2332:2652" ph="SELECT quest... questions" />
-            <marker date="1489693443135" expanded="true" signature="3784:4022" ph="SELECT tags.... tags" />
-            <marker date="1489693443135" expanded="true" signature="4371:4401" ph="SELECT COUNT... questions" />
-            <marker date="1489693443135" expanded="true" signature="4777:4895" ph="INSERT INTO answers" />
-            <marker date="1489693443135" expanded="true" signature="5310:5392" ph="SELECT * FRO... answers" />
-            <marker date="1489693443135" expanded="true" signature="5433:5680" ph="SELECT q.id,... questions" />
-            <marker date="1489693443135" expanded="true" signature="6742:6824" ph="SELECT * FRO... answers" />
-            <marker date="1489693443135" expanded="true" signature="6865:7007" ph="SELECT id, t... questions" />
+            <element signature="e#555#728#0#PHP" expanded="false" />
+            <element signature="e#734#1067#0#PHP" expanded="false" />
+            <element signature="e#2247#3324#0#PHP" expanded="false" />
+            <element signature="e#3330#3415#0#PHP" expanded="false" />
+            <element signature="e#3421#3763#0#PHP" expanded="false" />
+            <element signature="e#3769#4365#0#PHP" expanded="false" />
+            <element signature="e#4371#4598#0#PHP" expanded="false" />
+            <element signature="e#4604#4708#0#PHP" expanded="false" />
+            <element signature="e#4714#5189#0#PHP" expanded="false" />
+            <element signature="e#5195#6841#0#PHP" expanded="false" />
+            <element signature="e#6847#8175#0#PHP" expanded="false" />
+            <element signature="e#8181#8369#0#PHP" expanded="false" />
+            <element signature="e#8375#8461#0#PHP" expanded="false" />
+            <element signature="e#8467#8675#0#PHP" expanded="false" />
+            <marker date="1489825487212" expanded="true" signature="846:903" ph="INSERT INTO questions... " />
+            <marker date="1489825487212" expanded="true" signature="1503:1539" ph="INSERT INTO tags... " />
+            <marker date="1489825487212" expanded="true" signature="1503:1577" ph="INSERT INTO tags... " />
+            <marker date="1489825487212" expanded="true" signature="1743:2088" ph="INSERT INTO questions_tags" />
+            <marker date="1489825487212" expanded="true" signature="1896:2056" ph="SELECT tags.... tags" />
+            <marker date="1489825487212" expanded="true" signature="2377:2726" ph="SELECT quest... questions" />
+            <marker date="1489825487212" expanded="true" signature="3858:4096" ph="SELECT tags.... tags" />
+            <marker date="1489825487212" expanded="true" signature="4445:4475" ph="SELECT COUNT... questions" />
+            <marker date="1489825487212" expanded="true" signature="4852:4970" ph="INSERT INTO answers" />
+            <marker date="1489825487212" expanded="true" signature="5385:5492" ph="SELECT * FRO... answers" />
+            <marker date="1489825487212" expanded="true" signature="5542:5789" ph="SELECT q.id,... questions" />
+            <marker date="1489825487212" expanded="true" signature="7039:7121" ph="SELECT * FRO... answers" />
+            <marker date="1489825487212" expanded="true" signature="7162:7304" ph="SELECT id, t... questions" />
+            <marker date="1489825487212" expanded="true" signature="8541:8586" ph="UPDATE quest... " />
+            <marker date="1489825487212" expanded="true" signature="8754:8807" ph="UPDATE quest... " />
+            <marker date="1489825487212" expanded="true" signature="8970:9004" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forum/question.php">
+    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/delete_page_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="559">
+          <caret line="55" column="98" lean-forward="false" selection-start-line="55" selection-start-column="98" selection-end-line="55" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/delete_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/edit_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forum/ForumViews/SharedViews/nav_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="89" column="61" lean-forward="false" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
           <folding />
         </state>
       </provider>

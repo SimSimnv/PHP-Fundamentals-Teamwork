@@ -87,6 +87,32 @@ class ForumService implements ForumServiceInterface
         $this->sessionService->setUser($user->getId(),$user->getUsername());
     }
 
+    public function adminLogin(string $username, string $password)
+    {
+
+        if($username !== 'adminin'){
+            $this->sessionService->setMessage('Invalid Request','error');
+            $this->sessionService->redirect('administration.php');
+        }
+
+        $loginQuery="SELECT id,password,username FROM users WHERE username=?";
+        $stmt=$this->db->prepare($loginQuery);
+        $stmt->execute([$username]);
+        $user=$stmt->fetchObject(User::class);
+
+        /* @var $user User*/
+        $passwordHash=$user->getPassword();
+        $passwordMatch=$this->encryptionService->isValid($passwordHash,$password);
+
+        if(!$passwordMatch){
+            $this->sessionService->setMessage('Passwords mismatch!','error');
+            $this->sessionService->redirect('administration.php');
+        }
+
+        //Adding userId and username to session
+        $this->sessionService->setAdminUser($user->getId(),$user->getUsername());
+    }
+
     public function editProfile (int $id, string $username, string $email)
    {
 

@@ -15,6 +15,10 @@ class Question
     private $tags;
     private $views;
 
+    /**
+     * @return Tag[]|\Generator
+     */
+
     public function getTags()
     {
         return $this->tags;

@@ -4,7 +4,7 @@ if(!$sessionService->isLogged()){
     $sessionService->setMessage('Login in order to ask a question.','error');
     $sessionService->redirect('login.php');
 }
-if(isset($_POST['ask']) && !empty($_POST['title'] && !empty($_POST['body']))){
+if(isset($_POST['ask']) && !empty($_POST['title']) && !empty($_POST['body'])){
     $title = $_POST['title'];
     $body = $_POST['body'];
     $userId = $_SESSION['user_id'];

@@ -85,6 +85,14 @@
                         <a href="logout.php">Logout</a>
                     </li>
                 <?php endif; ?>
+                <?php if($sessionService->isAdminLogged()) : ?>
+                    <li>
+                        <a href="admin_panel.php">Admin Panel</a>
+                    </li>
+                    <li>
+                        <a href="admin_logout.php">Logout From Administration</a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
 

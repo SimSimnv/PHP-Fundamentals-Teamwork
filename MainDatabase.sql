@@ -27,10 +27,11 @@ CREATE TABLE IF NOT EXISTS `answers` (
   `question_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK__questions` (`question_id`),
-  CONSTRAINT `FK__questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`)
+  CONSTRAINT `FK__questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table enywas.answers: ~15 rows (approximately)
+DELETE FROM `answers`;
 /*!40000 ALTER TABLE `answers` DISABLE KEYS */;
 INSERT INTO `answers` (`id`, `author`, `email`, `body`, `question_id`) VALUES
 	(16, 'Ivan', 'ivan@mail.com', 'Yes, that is correct', 22),
@@ -60,10 +61,11 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `views` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `FK_questions_users` (`user_id`),
-  CONSTRAINT `FK_questions_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+  CONSTRAINT `FK_questions_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table enywas.questions: ~11 rows (approximately)
+DELETE FROM `questions`;
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
 INSERT INTO `questions` (`id`, `title`, `body`, `user_id`, `views`) VALUES
 	(22, 'Question about PHP', 'PHP is a server-side scripting language designed primarily for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994, the PHP reference implementation is now produced by The PHP Development Team. PHP originally stood for Personal Home Page, but it now stands for the recursive acronym PHP: Hypertext Preprocessor. Is that correct?', 3, 3),
@@ -74,9 +76,9 @@ INSERT INTO `questions` (`id`, `title`, `body`, `user_id`, `views`) VALUES
 	(27, 'A question about JS', 'JavaScript is a high-level, dynamic, untyped, and interpreted programming language.It has been standardized in the ECMAScript language specification. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production; the majority of websites employ it, and all modern Web browsers support it without the need for plug-ins. JavaScript is prototype-based with first-class functions, making it a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles.It has an API for working with text, arrays, dates and regular expressions, but does not include any I/O, such as networking, storage, or graphics facilities, relying for these upon the host environment in which it is embedded.', 8, 2),
 	(28, 'Java', 'Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers "write once, run anywhere" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2016, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Gosling at Sun Microsystems (which has since been acquired by Oracle Corporation) and released in 1995 as a core component of Sun Microsystems\' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them. Is that correct?', 8, 5),
 	(29, 'Trip to Somalia', 'Hello. I would like to ask is a trip to Somalia a good idea? Is it safe?', 8, 4),
-	(30, 'Work in programming', 'Computer programming (often shortened to programming) is a process that leads from an original formulation of a computing problem to executable computer programs. Programming involves activities such as analysis, developing understanding, generating algorithms, verification of requirements of algorithms including their correctness and resources consumption, and implementation (commonly referred to as coding) of algorithms in a target programming language. Source code is written in one or more programming languages. The purpose of programming is to find a sequence of instructions that will automate performing a specific task or solving a given problem. The process of programming thus often requires expertise in many different subjects, including knowledge of the application domain, specialized algorithms, and formal logic. Is it true? How about java?', 7, 17),
+	(30, 'Work in programming', 'Computer programming (often shortened to programming) is a process that leads from an original formulation of a computing problem to executable computer programs. Programming involves activities such as analysis, developing understanding, generating algorithms, verification of requirements of algorithms including their correctness and resources consumption, and implementation (commonly referred to as coding) of algorithms in a target programming language. Source code is written in one or more programming languages. The purpose of programming is to find a sequence of instructions that will automate performing a specific task or solving a given problem. The process of programming thus often requires expertise in many different subjects, including knowledge of the application domain, specialized algorithms, and formal logic. Is it true? How about java?', 7, 19),
 	(31, 'Fitness question', 'Physical fitness is a general state of health and well-being and, more specifically, the ability to perform aspects of sports, occupations and daily activities. Physical fitness is generally achieved through proper nutrition, moderate-vigorous physical exercise, and sufficient rest. Is that true?', 7, 5),
-	(32, 'Do you know tennis?', 'Tennis is a racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles). Each player uses a tennis racket that is strung with cord to strike a hollow rubber ball covered with felt over or around a net and into the opponent\'s court. The object of the game is to play the ball in such a way that the opponent is not able to play a valid return. The player who is unable to return the ball will not gain a point, while the opposite player will.', 7, 28);
+	(32, 'Do you know tennis?', 'Tennis is a racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles). Each player uses a tennis racket that is strung with cord to strike a hollow rubber ball covered with felt over or around a net and into the opponent\'s court. The object of the game is to play the ball in such a way that the opponent is not able to play a valid return. The player who is unable to return the ball will not gain a point, while the opposite player will.', 7, 32);
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 
 -- Dumping structure for table enywas.questions_tags
@@ -87,10 +89,11 @@ CREATE TABLE IF NOT EXISTS `questions_tags` (
   PRIMARY KEY (`question_id`,`tag_id`),
   KEY `FK__tags` (`tag_id`),
   CONSTRAINT `FK__tags` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`),
-  CONSTRAINT `FK_questions_tags_questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`)
+  CONSTRAINT `FK_questions_tags_questions` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table enywas.questions_tags: ~19 rows (approximately)
+-- Dumping data for table enywas.questions_tags: ~0 rows (approximately)
+DELETE FROM `questions_tags`;
 /*!40000 ALTER TABLE `questions_tags` DISABLE KEYS */;
 INSERT INTO `questions_tags` (`question_id`, `tag_id`) VALUES
 	(22, 27),
@@ -111,7 +114,8 @@ INSERT INTO `questions_tags` (`question_id`, `tag_id`) VALUES
 	(30, 38),
 	(31, 43),
 	(31, 44),
-	(32, 43);
+	(32, 43),
+	(32, 52);
 /*!40000 ALTER TABLE `questions_tags` ENABLE KEYS */;
 
 -- Dumping structure for table enywas.tags
@@ -121,9 +125,10 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `name` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table enywas.tags: ~10 rows (approximately)
+DELETE FROM `tags`;
 /*!40000 ALTER TABLE `tags` DISABLE KEYS */;
 INSERT INTO `tags` (`id`, `name`) VALUES
 	(44, 'fitness'),
@@ -133,6 +138,7 @@ INSERT INTO `tags` (`id`, `name`) VALUES
 	(36, 'javascript'),
 	(27, 'programming'),
 	(43, 'sports'),
+	(52, 'tennis'),
 	(33, 'test'),
 	(29, 'vacation'),
 	(28, 'work');
@@ -148,9 +154,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table enywas.users: ~8 rows (approximately)
+DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 	(1, 'testUser', 'testuser@mail.com', '123'),
@@ -160,7 +167,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 	(5, 'Stens', 'Stens@abv.bg', '$2y$10$JYGagMj21CKpRxpsvfZae.gvHZyvK4dZ1K.OinQFnvkxXhwB68/9S'),
 	(6, 'zotakk', 'zotak3105@gmail.com', '$2y$10$1bxcBv7TKKM2OtUL4FMWUOqxhOkkqrVL4zIpNA1QkBxye1.dBRGZy'),
 	(7, 'Regi', 'regi@mail.com', '$2y$10$EWlxgvHALN8ohIWwgmUC4OcZm3FuVewGSnP8KI4kcw1aVoG2yXk1y'),
-	(8, 'SimSim', 'phpMaster@pro.bg', '$2y$10$Xh6nF/VVdyKsIE8Y9MR4n.liNKS9VNbQTmLj3stzQfAITlASz.hg.');
+	(8, 'SimSim', 'phpMaster@pro.bg', '$2y$10$Xh6nF/VVdyKsIE8Y9MR4n.liNKS9VNbQTmLj3stzQfAITlASz.hg.'),
+	(9, 'adminin', 'adminin@gmail.com', '$2y$10$QD7UUJiKCM8R0zKECkxHIOxpipJmXNOZs2lFsYc7.4I6F4dSA9ZJm');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

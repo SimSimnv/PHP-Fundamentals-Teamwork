@@ -20,4 +20,16 @@ interface CrudServiceInterface
 
     public function cutLongText(string $string, int $length = 100);
 
+    public function listTagsByQuestionId($questionId);
+
+    public function getCurrentPage():int;
+
+    public function listQuestionDetailsByTitle(string $title);
+
+    public function questionsCount();
+
+    public function editQuestion($title,$body,$tags);
+
+    public function deleteQuestion($id);
+
 }

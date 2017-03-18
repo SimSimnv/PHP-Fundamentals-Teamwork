@@ -11,15 +11,35 @@ class SessionService implements SessionServiceInterface
         $_SESSION['username']=$username;
         $_SESSION['user_id']=$user_id;
     }
+
     public function unsetUser()
     {
         unset($_SESSION['username']);
         unset($_SESSION['user_id']);
     }
+
     public function isLogged():bool
     {
         return isset($_SESSION['user_id']);
     }
+
+    public function setAdminUser(string $adminId, string $username)
+    {
+        $_SESSION['admin_id'] = $adminId;
+        $_SESSION['admin_username'] = $username;
+    }
+
+    public function isAdminLogged():bool
+    {
+        return isset($_SESSION['admin_id']);
+    }
+
+    public function unsetAdminUser()
+    {
+        unset($_SESSION['admin_id']);
+        unset($_SESSION['admin_username']);
+    }
+
     public function getUserId():string
     {
         if(!$this->isLogged()){
@@ -27,6 +47,7 @@ class SessionService implements SessionServiceInterface
         }
         return $_SESSION['user_id'];
     }
+
     public function getUserName():string
     {
         if(!$this->isLogged()){
@@ -75,8 +96,6 @@ class SessionService implements SessionServiceInterface
         unset($_SESSION['question_title']);
     }
 
-
-
     public function setMessage(string $infoMessage, string $messageType)
     {
         $type=strtolower($messageType);
@@ -86,6 +105,7 @@ class SessionService implements SessionServiceInterface
         $_SESSION['infoMessage']=$infoMessage;
         $_SESSION['messageType']=$messageType;
     }
+
     public function getMessage():Message
     {
         if(!$this->checkForMessage()){
@@ -93,11 +113,13 @@ class SessionService implements SessionServiceInterface
         }
         return new Message($_SESSION['infoMessage'],$_SESSION['messageType']);
     }
+
     public function unsetMessage()
     {
         unset($_SESSION['infoMessage']);
         unset($_SESSION['messageType']);
     }
+
     public function checkForMessage():bool{
         return isset($_SESSION['infoMessage']);
     }

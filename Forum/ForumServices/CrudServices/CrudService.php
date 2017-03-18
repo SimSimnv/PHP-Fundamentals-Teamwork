@@ -44,12 +44,12 @@ class CrudService implements CrudServiceInterface
 
         foreach ($tagsArr as $tag){
             //creating tags that don't exist
-            $stmt=$this->db->prepare("INSERT INTO tags (`name`) VALUES (?)");
-            $stmt->execute([$tag]);
+            $stmt=$this->db->prepare("INSERT INTO tags (`name`) VALUES (?) ON DUPLICATE KEY UPDATE tags.name = ?;");
+            $stmt->execute([$tag,$tag]);
 
             //inserting question and tag id to intermediate table
             $questionsTagsQuery="
-            INSERT INTO 
+            REPLACE INTO 
               questions_tags 
                 (`question_id`,`tag_id`) 
             VALUES 
@@ -232,6 +232,9 @@ class CrudService implements CrudServiceInterface
 
         $allAnswers->setAllAnswers($answers);
         $allAnswers->setQuestion($question);
+        /** @var $question Question*/
+        $tags=$this->listTagsByQuestionId($question->getId());
+        $question->setTags($tags);
 
         $this->increaseQuestionViews($questionId);
 
@@ -310,5 +313,20 @@ class CrudService implements CrudServiceInterface
         $stmt=$this->db->prepare($query);
         $stmt->execute([$questionId]);
     }
+
+    public function editQuestion($title, $body, $id)
+    {
+        $query = 'UPDATE questions SET title = ?, body = ? WHERE id = ?;';
+        $stmt = $this->db->prepare($query);
+        $stmt->execute([$title,$body,$id]);
+    }
+
+    public function deleteQuestion($id)
+    {
+        $query = 'DELETE FROM questions WHERE id = ?';
+        $stmt = $this->db->prepare($query);
+        $stmt->execute([$id]);
+    }
+
 
 }
