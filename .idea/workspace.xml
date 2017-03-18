@@ -18,8 +18,8 @@
       <file leaf-file-name="CrudService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="157" column="37" lean-forward="false" selection-start-line="157" selection-start-column="37" selection-end-line="157" selection-end-column="37" />
+            <state relative-caret-position="466">
+              <caret line="247" column="61" lean-forward="false" selection-start-line="247" selection-start-column="61" selection-end-line="247" selection-end-column="61" />
               <folding>
                 <element signature="e#555#728#0#PHP" expanded="false" />
                 <element signature="e#734#1067#0#PHP" expanded="false" />
@@ -31,26 +31,26 @@
                 <element signature="e#4406#4658#0#PHP" expanded="false" />
                 <element signature="e#4664#4768#0#PHP" expanded="false" />
                 <element signature="e#4774#5249#0#PHP" expanded="false" />
-                <element signature="e#5255#6901#0#PHP" expanded="false" />
-                <element signature="e#6907#8235#0#PHP" expanded="false" />
-                <element signature="e#8241#8429#0#PHP" expanded="false" />
-                <element signature="e#8435#8521#0#PHP" expanded="false" />
-                <element signature="e#8527#8735#0#PHP" expanded="false" />
-                <element signature="e#8741#8964#0#PHP" expanded="false" />
-                <element signature="e#8970#9164#0#PHP" expanded="false" />
-                <marker date="1489828867824" expanded="true" signature="846:903" ph="INSERT INTO questions... " />
-                <marker date="1489828867824" expanded="true" signature="1503:1577" ph="INSERT INTO tags... " />
-                <marker date="1489828867824" expanded="true" signature="2377:2761" ph="SELECT quest... questions" />
-                <marker date="1489828867824" expanded="true" signature="3893:4131" ph="SELECT tags.... tags" />
-                <marker date="1489828867824" expanded="true" signature="4480:4535" ph="SELECT COUNT... questions" />
-                <marker date="1489828867824" expanded="true" signature="4912:5030" ph="INSERT INTO answers" />
-                <marker date="1489828867824" expanded="true" signature="5445:5552" ph="SELECT * FRO... answers" />
-                <marker date="1489828867824" expanded="true" signature="5602:5849" ph="SELECT q.id,... questions" />
-                <marker date="1489828867824" expanded="true" signature="7099:7181" ph="SELECT * FRO... answers" />
-                <marker date="1489828867824" expanded="true" signature="7222:7364" ph="SELECT id, t... questions" />
-                <marker date="1489828867824" expanded="true" signature="8601:8646" ph="UPDATE quest... " />
-                <marker date="1489828867824" expanded="true" signature="8814:8867" ph="UPDATE quest... " />
-                <marker date="1489828867824" expanded="true" signature="9030:9080" ph="UPDATE quest... " />
+                <element signature="e#5255#6949#0#PHP" expanded="false" />
+                <element signature="e#6955#8331#0#PHP" expanded="false" />
+                <element signature="e#8337#8525#0#PHP" expanded="false" />
+                <element signature="e#8531#8617#0#PHP" expanded="false" />
+                <element signature="e#8623#8831#0#PHP" expanded="false" />
+                <element signature="e#8837#9060#0#PHP" expanded="false" />
+                <element signature="e#9066#9260#0#PHP" expanded="false" />
+                <marker date="1489829369577" expanded="true" signature="846:903" ph="INSERT INTO questions... " />
+                <marker date="1489829369577" expanded="true" signature="1503:1577" ph="INSERT INTO tags... " />
+                <marker date="1489829369577" expanded="true" signature="2377:2761" ph="SELECT quest... questions" />
+                <marker date="1489829369577" expanded="true" signature="3893:4131" ph="SELECT tags.... tags" />
+                <marker date="1489829369577" expanded="true" signature="4480:4535" ph="SELECT COUNT... questions" />
+                <marker date="1489829369577" expanded="true" signature="4912:5030" ph="INSERT INTO answers" />
+                <marker date="1489829369577" expanded="true" signature="5445:5552" ph="SELECT * FRO... answers" />
+                <marker date="1489829369577" expanded="true" signature="5602:5884" ph="SELECT q.id,... questions" />
+                <marker date="1489829369577" expanded="true" signature="7147:7229" ph="SELECT * FRO... answers" />
+                <marker date="1489829369577" expanded="true" signature="7270:7447" ph="SELECT id, t... questions" />
+                <marker date="1489829369577" expanded="true" signature="8697:8742" ph="UPDATE quest... " />
+                <marker date="1489829369577" expanded="true" signature="8910:8963" ph="UPDATE quest... " />
+                <marker date="1489829369577" expanded="true" signature="9126:9176" ph="UPDATE quest... " />
               </folding>
             </state>
           </provider>
@@ -360,12 +360,12 @@
       <workItem from="1489573382141" duration="1317000" />
       <workItem from="1489692566544" duration="901000" />
       <workItem from="1489816297088" duration="9458000" />
-      <workItem from="1489828591875" duration="406000" />
+      <workItem from="1489828591875" duration="934000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43912000" />
+    <option name="totallyTimeSpent" value="44440000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
@@ -800,8 +800,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Forum/ForumServices/CrudServices/CrudService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="157" column="37" lean-forward="false" selection-start-line="157" selection-start-column="37" selection-end-line="157" selection-end-column="37" />
+        <state relative-caret-position="466">
+          <caret line="247" column="61" lean-forward="false" selection-start-line="247" selection-start-column="61" selection-end-line="247" selection-end-column="61" />
           <folding>
             <element signature="e#555#728#0#PHP" expanded="false" />
             <element signature="e#734#1067#0#PHP" expanded="false" />
@@ -813,26 +813,26 @@
             <element signature="e#4406#4658#0#PHP" expanded="false" />
             <element signature="e#4664#4768#0#PHP" expanded="false" />
             <element signature="e#4774#5249#0#PHP" expanded="false" />
-            <element signature="e#5255#6901#0#PHP" expanded="false" />
-            <element signature="e#6907#8235#0#PHP" expanded="false" />
-            <element signature="e#8241#8429#0#PHP" expanded="false" />
-            <element signature="e#8435#8521#0#PHP" expanded="false" />
-            <element signature="e#8527#8735#0#PHP" expanded="false" />
-            <element signature="e#8741#8964#0#PHP" expanded="false" />
-            <element signature="e#8970#9164#0#PHP" expanded="false" />
-            <marker date="1489828867824" expanded="true" signature="846:903" ph="INSERT INTO questions... " />
-            <marker date="1489828867824" expanded="true" signature="1503:1577" ph="INSERT INTO tags... " />
-            <marker date="1489828867824" expanded="true" signature="2377:2761" ph="SELECT quest... questions" />
-            <marker date="1489828867824" expanded="true" signature="3893:4131" ph="SELECT tags.... tags" />
-            <marker date="1489828867824" expanded="true" signature="4480:4535" ph="SELECT COUNT... questions" />
-            <marker date="1489828867824" expanded="true" signature="4912:5030" ph="INSERT INTO answers" />
-            <marker date="1489828867824" expanded="true" signature="5445:5552" ph="SELECT * FRO... answers" />
-            <marker date="1489828867824" expanded="true" signature="5602:5849" ph="SELECT q.id,... questions" />
-            <marker date="1489828867824" expanded="true" signature="7099:7181" ph="SELECT * FRO... answers" />
-            <marker date="1489828867824" expanded="true" signature="7222:7364" ph="SELECT id, t... questions" />
-            <marker date="1489828867824" expanded="true" signature="8601:8646" ph="UPDATE quest... " />
-            <marker date="1489828867824" expanded="true" signature="8814:8867" ph="UPDATE quest... " />
-            <marker date="1489828867824" expanded="true" signature="9030:9080" ph="UPDATE quest... " />
+            <element signature="e#5255#6949#0#PHP" expanded="false" />
+            <element signature="e#6955#8331#0#PHP" expanded="false" />
+            <element signature="e#8337#8525#0#PHP" expanded="false" />
+            <element signature="e#8531#8617#0#PHP" expanded="false" />
+            <element signature="e#8623#8831#0#PHP" expanded="false" />
+            <element signature="e#8837#9060#0#PHP" expanded="false" />
+            <element signature="e#9066#9260#0#PHP" expanded="false" />
+            <marker date="1489829369577" expanded="true" signature="846:903" ph="INSERT INTO questions... " />
+            <marker date="1489829369577" expanded="true" signature="1503:1577" ph="INSERT INTO tags... " />
+            <marker date="1489829369577" expanded="true" signature="2377:2761" ph="SELECT quest... questions" />
+            <marker date="1489829369577" expanded="true" signature="3893:4131" ph="SELECT tags.... tags" />
+            <marker date="1489829369577" expanded="true" signature="4480:4535" ph="SELECT COUNT... questions" />
+            <marker date="1489829369577" expanded="true" signature="4912:5030" ph="INSERT INTO answers" />
+            <marker date="1489829369577" expanded="true" signature="5445:5552" ph="SELECT * FRO... answers" />
+            <marker date="1489829369577" expanded="true" signature="5602:5884" ph="SELECT q.id,... questions" />
+            <marker date="1489829369577" expanded="true" signature="7147:7229" ph="SELECT * FRO... answers" />
+            <marker date="1489829369577" expanded="true" signature="7270:7447" ph="SELECT id, t... questions" />
+            <marker date="1489829369577" expanded="true" signature="8697:8742" ph="UPDATE quest... " />
+            <marker date="1489829369577" expanded="true" signature="8910:8963" ph="UPDATE quest... " />
+            <marker date="1489829369577" expanded="true" signature="9126:9176" ph="UPDATE quest... " />
           </folding>
         </state>
       </provider>

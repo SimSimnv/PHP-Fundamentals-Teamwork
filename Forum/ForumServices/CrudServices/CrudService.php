@@ -210,7 +210,9 @@ class CrudService implements CrudServiceInterface
             users AS u ON
             u.id=q.user_id
             WHERE
-            q.id=?";
+            q.id=?
+            AND deleted_on IS NULL
+            ";
 
         $questionStmt=$this->db->prepare($questionQuery);
         $questionStmt->execute([$questionId]);
@@ -264,7 +266,9 @@ class CrudService implements CrudServiceInterface
             FROM
             questions 
             WHERE
-            title LIKE ?";
+            title LIKE ?
+            AND deleted_on IS NULL
+            ";
 
         $questionStmt=$this->db->prepare($questionQuery);
         $questionStmt->execute(["%$title%"]);
