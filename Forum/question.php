@@ -2,7 +2,6 @@
 require_once 'app.php';
 $questionDetails = null;
 $crudService=new \ForumServices\CrudServices\CrudService($db,$sessionService);
-
 if(isset($_GET['id'])){
     $sessionService->setQuestionId($_GET['id']);
     $id = $sessionService->getQuestionId();
@@ -21,6 +20,10 @@ if(isset($_GET['id'])){
     $questionDetails=$crudService->listQuestionDetails($id);
 }
 elseif(isset($_POST['title'])) {
+    if(empty($_POST['title'])){
+        $sessionService->setMessage('Cannot search the infinity!','error');
+        $sessionService->redirect('home.php');
+    }
     $sessionService->setQuestionTitle($_POST['title']);
     $title = $sessionService->getQuestionTitle();
     $questionDetails = $crudService->listQuestionDetailsByTitle($title);
