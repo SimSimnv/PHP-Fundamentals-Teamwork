@@ -40,16 +40,16 @@
     <ul class="pagination">
         <?php if($service->getCurrentPage()>1):?>
             <li>
-                <a href="all_questions.php?page=<?=$service->getCurrentPage()-1?>">&laquo;</a>
+                <a href="admin_panel.php?page=<?=$service->getCurrentPage()-1?>">&laquo;</a>
             </li>
         <?php endif;?>
 
         <?php for($i=1; $i<=$service->getMaxPage(); $i++):?>
-            <li><a href="all_questions.php?page=<?=$i;?>" class="<?=($service->getCurrentPage()==$i)?'current-page':'page';?>"><?=$i?></a></li>
+            <li><a href="admin_panel.php?page=<?=$i;?>" class="<?=($service->getCurrentPage()==$i)?'current-page':'page';?>"><?=$i?></a></li>
         <?php endfor;?>
 
         <?php if($service->getCurrentPage()<$service->getMaxPage()):?>
-            <li><a href="all_questions.php?page=<?=$service->getCurrentPage()+1?>">&raquo;</a></li>
+            <li><a href="admin_panel.php?page=<?=$service->getCurrentPage()+1?>">&raquo;</a></li>
         <?php endif;?>
 
     </ul>
